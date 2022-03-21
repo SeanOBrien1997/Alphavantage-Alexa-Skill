@@ -31,7 +31,8 @@ export class AlphavantageClient implements StockClient {
         let index = 0;
         while (index < totalIPOs && index < amount) {
           const ipo: IPO | undefined = IPOs.shift();
-          if (typeof ipo !== 'undefined') {
+          if (typeof ipo !== 'undefined' && ipo.name.length > 0) {
+            console.log(`Pushing ${ipo.symbol}`);
             filteredIPOs.push(ipo);
           } else {
             break;
