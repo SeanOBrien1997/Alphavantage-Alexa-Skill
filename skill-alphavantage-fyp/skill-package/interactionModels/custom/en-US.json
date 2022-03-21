@@ -1,40 +1,68 @@
 {
-    "interactionModel": {
-        "languageModel": {
-            "invocationName": "hello world",
-            "intents": [
-                {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
-                    "name": "HelloWorldIntent",
-                    "slots": [],
-                    "samples": [
-                        "hello",
-                        "how are you",
-                        "say hi world",
-                        "say hi",
-                        "hi",
-                        "say hello world",
-                        "say hello"
-                    ]
-                },
-                {
-                    "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                }
-            ],
-            "types": []
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hello world",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "SpecificGlobalStockSymbolQuoteIntent",
+          "slots": [
+            {
+              "name": "symbol",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "Tell me about the {symbol} stock today",
+            "Tell me about {symbol} today",
+            "Tell me about {symbol}",
+            "How is {symbol} performing today"
+          ]
+        },
+        {
+          "name": "NextNIPOsIntent",
+          "slots": [
+            {
+              "name": "amount",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "Tell me about the next {amount} IPOs",
+            "Tell me about {amount} IPOs",
+            "{amount} IPOs"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
         }
+      ],
+      "types": []
     }
   }
-  
+}

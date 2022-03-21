@@ -1,0 +1,22 @@
+{
+  "name": "skill-alphavantage-fyp",
+  "version": "1.0.0",
+  "description": "An Alexa skill to consume the Alphavantage API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && cp lambda/package.json lambda/util.js dist/",
+    "deploy": "npm run build && ask deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.12.0",
+    "ask-sdk-core": "^2.12.0",
+    "model": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
+  }
+}
