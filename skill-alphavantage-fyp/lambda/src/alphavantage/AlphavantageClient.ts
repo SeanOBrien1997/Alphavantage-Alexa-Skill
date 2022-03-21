@@ -25,11 +25,13 @@ export class AlphavantageClient implements StockClient {
         console.log(csv);
         const IPOs: IPO[] = this.parseIPOCSVResponse(csv);
         const totalIPOs = IPOs.length;
+        console.log('total ipos');
+        console.log(totalIPOs);
         const filteredIPOs: IPO[] = [];
         let index = 0;
         while (index < totalIPOs && index < amount) {
           const ipo: IPO | undefined = IPOs.shift();
-          if (ipo) {
+          if (typeof ipo !== 'undefined') {
             filteredIPOs.push(ipo);
           } else {
             break;
@@ -81,9 +83,15 @@ export class AlphavantageClient implements StockClient {
   private parseIPOCSVResponse = (csv: string): IPO[] => {
     const result: IPO[] = [];
     const lines: string[] = csv.split('\n');
+    console.log('lines before shift');
+    console.log(lines);
     lines.shift(); // remove header line of csv
+    console.log('lines after');
+    console.log(lines);
     lines.forEach((line) => {
       const values: string[] = line.split(',');
+      console.log('splitting current line');
+      console.log(line);
       result.push({
         symbol: values[0],
         name: values[1],
