@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "Alphavantage",
+      "invocationName": "alphavantage",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -55,6 +55,20 @@
             "Tell me about the next {amount} IPOs",
             "Tell me about {amount} IPOs",
             "{amount} IPOs"
+          ]
+        },
+        {
+          "name": "ListNDigitalCurrenciesIntent",
+          "slots": [
+            {
+              "name": "amount",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "List {amount} digital currencies",
+            "Tell me about {amount} digital currencies",
+            "{amount} digital currencies"
           ]
         },
         {

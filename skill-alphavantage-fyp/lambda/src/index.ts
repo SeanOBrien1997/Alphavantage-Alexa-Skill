@@ -16,11 +16,14 @@ import { AlphavantageClient } from './alphavantage/AlphavantageClient';
 import {
   alphavantageBaseURL,
   ALPHAVANTAGE_API_KEY,
+  ALPHAVANTAGE_DIGITAL_CURRENCY_LIST_ENDPOINT,
   amountSlotName,
   symbolSlotName,
 } from './constants';
 import { FilteredIPOsResponse } from './model/alphavantage/api/FilteredIPOsResponse';
+import { DigitalCurrencyListProvider } from './model/DigitalCurrencyListProvider';
 import { StockClient } from './model/StockClient';
+import { AlphavantageDigitalCurrencyListProvider } from './utils/alphavantage/AlphavantageDigitalCurrencyListProvider';
 
 const stockClient: StockClient = new AlphavantageClient(
   ALPHAVANTAGE_API_KEY,
@@ -85,6 +88,51 @@ const SpecificGlobalStockSymbolQuoteIntentHandler: RequestHandler = {
   },
 };
 
+const ListNDigitalCurrenciesIntentHandler: RequestHandler = {
+  canHandle(handlerInput: HandlerInput) {
+    return (
+      getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+      getIntentName(handlerInput.requestEnvelope) ===
+        'ListNDigitalCurrenciesIntent'
+    );
+  },
+  async handle(handlerInput: HandlerInput) {
+    const requestEnvelope = handlerInput.requestEnvelope;
+    const amountSlot = Number(getSlotValue(requestEnvelope, amountSlotName));
+    const digitalCurrencyListProvider: DigitalCurrencyListProvider =
+      new AlphavantageDigitalCurrencyListProvider(
+        ALPHAVANTAGE_DIGITAL_CURRENCY_LIST_ENDPOINT
+      );
+    const digitalCurrenciesMap =
+      await digitalCurrencyListProvider.getCurrenciesNamePrimaryKey();
+    const keys = Array.from(digitalCurrenciesMap.keys());
+    const filteredRandomlySelectedCurrencies = new Map<string, string>();
+    for (let i = 0; i < amountSlot; i++) {
+      const randomIndex = Math.floor(Math.random() * (keys.length + 1));
+      const key = keys[randomIndex];
+      const value = digitalCurrenciesMap.get(key);
+      if (value) {
+        filteredRandomlySelectedCurrencies.set(key, value);
+      }
+    }
+    const details: string[] = [];
+    let count = 1;
+    filteredRandomlySelectedCurrencies.forEach((value, key) => {
+      details.push(`Number ${count}. ${key} trading as ${value}`);
+      count++;
+    });
+    const speakOutput: string = `Here are ${
+      filteredRandomlySelectedCurrencies.size
+    } random digital currencies. ${details.join('. ')}`;
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
 const NextNIPOsIntentHandler: RequestHandler = {
   canHandle(handlerInput: HandlerInput) {
     return (
@@ -103,15 +151,17 @@ const NextNIPOsIntentHandler: RequestHandler = {
     let count = 1;
     filteredIPOsResponse.filteredIPOs.forEach((filteredIPO) => {
       details.push(
-        `IPO Number ${count}, ${filteredIPO.name} will be offered on ${filteredIPO.ipoDate} on the ${filteredIPO.exchange} exchange. Trading symbol ${filteredIPO.symbol}, trading in ${filteredIPO.currency}`
+        `Number ${count}, ${filteredIPO.name} will be offered on ${filteredIPO.ipoDate}. Offered on the following exchange: ${filteredIPO.exchange}, under trading symbol ${filteredIPO.symbol}, trading currency is ${filteredIPO.currency}`
       );
       count++;
     });
     const speakOutput = `Here are ${
       filteredIPOsResponse.filteredIPOs.length
-    } IPOs expected for the next 3 months. There are ${
+    } of the ${
       filteredIPOsResponse.total
-    } IPOs expected. You requested ${amountSlot}. ${details.join('.')}`;
+    } IPOs expected in the next three months. You requested ${amountSlot}. ${details.join(
+      '.'
+    )}`;
     return (
       handlerInput.responseBuilder
         .speak(speakOutput)
@@ -217,6 +267,7 @@ exports.handler = SkillBuilders.custom()
     HelloWorldIntentHandler,
     SpecificGlobalStockSymbolQuoteIntentHandler,
     NextNIPOsIntentHandler,
+    ListNDigitalCurrenciesIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,

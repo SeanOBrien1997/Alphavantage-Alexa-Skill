@@ -24,16 +24,20 @@ export class AlphavantageClient implements StockClient {
         const csv = response.data;
         console.log(csv);
         const IPOs: IPO[] = this.parseIPOCSVResponse(csv);
-        const totalIPOs = IPOs.length;
+        let totalIPOs = IPOs.length;
         console.log('total ipos');
         console.log(totalIPOs);
         const filteredIPOs: IPO[] = [];
         let index = 0;
         while (index < totalIPOs && index < amount) {
           const ipo: IPO | undefined = IPOs.shift();
-          if (typeof ipo !== 'undefined' && ipo.name.length > 0) {
-            console.log(`Pushing ${ipo.symbol}`);
-            filteredIPOs.push(ipo);
+          if (typeof ipo !== 'undefined') {
+            if (ipo.name !== undefined) {
+              console.log(`Pushing ${ipo.symbol}`);
+              filteredIPOs.push(ipo);
+            } else {
+              totalIPOs--;
+            }
           } else {
             break;
           }

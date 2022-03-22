@@ -6,17 +6,23 @@
         "@ask-cli/lambda-deployer": {
           "deployState": {
             "default": {
-              "lambda": {},
-              "iamRole": "arn:aws:iam::340812117322:role/ask-lambda-skill-alphavantage-fyp-1647867260273"
+              "lambda": {
+                "arn": "arn:aws:lambda:eu-west-1:340812117322:function:ask-skill-alphavantage-fyp-default-default-1647916966798",
+                "lastModified": "2022-03-22T02:42:49.381+0000",
+                "revisionId": "f1dfe8ed-ab90-4edc-bd49-6ad1b9cc1629"
+              },
+              "iamRole": "arn:aws:iam::340812117322:role/ask-lambda-skill-alphavantage-fyp-1647916958018"
             }
           }
         }
       },
       "skillId": "amzn1.ask.skill.296af463-dc25-44db-8f1e-325bc3de8aec",
-      "skillMetadata": {},
+      "skillMetadata": {
+        "lastDeployHash": "exKLfUzntDocsm82EGAHd/TeZIw="
+      },
       "code": {
         "default": {
-          "lastDeployHash": "Ld5UvtAbXVg3/rmSaRkC2o2fZtw="
+          "lastDeployHash": "uBHSZ65nA57K8f4fUZDBWCzortA="
         }
       }
     }
