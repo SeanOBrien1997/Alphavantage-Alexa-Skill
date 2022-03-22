@@ -72,11 +72,7372 @@
           ]
         },
         {
+          "name": "ListNPhysicalCurrenciesIntent",
+          "slots": [
+            {
+              "name": "amount",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "List {amount} physical currencies",
+            "Tell me about {amount} physical currencies",
+            "{amount} physical currencies"
+          ]
+        },
+        {
+          "name": "ConvertCurrenciesIntent",
+          "slots": [
+            {
+              "name": "fromCurrency",
+              "type": "Currency"
+            },
+            {
+              "name": "toCurrency",
+              "type": "Currency"
+            }
+          ],
+          "samples": [
+            "Convert {fromCurrency} to {toCurrency}",
+            "Change {fromCurrency} to {toCurrency}",
+            "Exchange {fromCurrency} to {toCurrency}",
+            "Convert {fromCurrency} for {toCurrency}",
+            "Change {fromCurrency} for {toCurrency}",
+            "Exchange {fromCurrency} for {toCurrency}"
+          ]
+        },
+        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         }
       ],
-      "types": []
+      "types": [
+        {
+          "name": "Currency",
+          "values": [
+            {
+              "name": {
+                "value": "AED"
+              }
+            },
+            {
+              "name": {
+                "value": "AFN"
+              }
+            },
+            {
+              "name": {
+                "value": "ALL"
+              }
+            },
+            {
+              "name": {
+                "value": "AMD"
+              }
+            },
+            {
+              "name": {
+                "value": "ANG"
+              }
+            },
+            {
+              "name": {
+                "value": "AOA"
+              }
+            },
+            {
+              "name": {
+                "value": "ARS"
+              }
+            },
+            {
+              "name": {
+                "value": "AUD"
+              }
+            },
+            {
+              "name": {
+                "value": "AWG"
+              }
+            },
+            {
+              "name": {
+                "value": "AZN"
+              }
+            },
+            {
+              "name": {
+                "value": "BAM"
+              }
+            },
+            {
+              "name": {
+                "value": "BBD"
+              }
+            },
+            {
+              "name": {
+                "value": "BDT"
+              }
+            },
+            {
+              "name": {
+                "value": "BGN"
+              }
+            },
+            {
+              "name": {
+                "value": "BHD"
+              }
+            },
+            {
+              "name": {
+                "value": "BIF"
+              }
+            },
+            {
+              "name": {
+                "value": "BMD"
+              }
+            },
+            {
+              "name": {
+                "value": "BND"
+              }
+            },
+            {
+              "name": {
+                "value": "BOB"
+              }
+            },
+            {
+              "name": {
+                "value": "BRL"
+              }
+            },
+            {
+              "name": {
+                "value": "BSD"
+              }
+            },
+            {
+              "name": {
+                "value": "BTN"
+              }
+            },
+            {
+              "name": {
+                "value": "BWP"
+              }
+            },
+            {
+              "name": {
+                "value": "BZD"
+              }
+            },
+            {
+              "name": {
+                "value": "CAD"
+              }
+            },
+            {
+              "name": {
+                "value": "CDF"
+              }
+            },
+            {
+              "name": {
+                "value": "CHF"
+              }
+            },
+            {
+              "name": {
+                "value": "CLF"
+              }
+            },
+            {
+              "name": {
+                "value": "CLP"
+              }
+            },
+            {
+              "name": {
+                "value": "CNH"
+              }
+            },
+            {
+              "name": {
+                "value": "CNY"
+              }
+            },
+            {
+              "name": {
+                "value": "COP"
+              }
+            },
+            {
+              "name": {
+                "value": "CUP"
+              }
+            },
+            {
+              "name": {
+                "value": "CVE"
+              }
+            },
+            {
+              "name": {
+                "value": "CZK"
+              }
+            },
+            {
+              "name": {
+                "value": "DJF"
+              }
+            },
+            {
+              "name": {
+                "value": "DKK"
+              }
+            },
+            {
+              "name": {
+                "value": "DOP"
+              }
+            },
+            {
+              "name": {
+                "value": "DZD"
+              }
+            },
+            {
+              "name": {
+                "value": "EGP"
+              }
+            },
+            {
+              "name": {
+                "value": "ERN"
+              }
+            },
+            {
+              "name": {
+                "value": "ETB"
+              }
+            },
+            {
+              "name": {
+                "value": "EUR"
+              }
+            },
+            {
+              "name": {
+                "value": "FJD"
+              }
+            },
+            {
+              "name": {
+                "value": "FKP"
+              }
+            },
+            {
+              "name": {
+                "value": "GBP"
+              }
+            },
+            {
+              "name": {
+                "value": "GEL"
+              }
+            },
+            {
+              "name": {
+                "value": "GHS"
+              }
+            },
+            {
+              "name": {
+                "value": "GIP"
+              }
+            },
+            {
+              "name": {
+                "value": "GMD"
+              }
+            },
+            {
+              "name": {
+                "value": "GNF"
+              }
+            },
+            {
+              "name": {
+                "value": "GTQ"
+              }
+            },
+            {
+              "name": {
+                "value": "GYD"
+              }
+            },
+            {
+              "name": {
+                "value": "HKD"
+              }
+            },
+            {
+              "name": {
+                "value": "HNL"
+              }
+            },
+            {
+              "name": {
+                "value": "HRK"
+              }
+            },
+            {
+              "name": {
+                "value": "HTG"
+              }
+            },
+            {
+              "name": {
+                "value": "HUF"
+              }
+            },
+            {
+              "name": {
+                "value": "ICP"
+              }
+            },
+            {
+              "name": {
+                "value": "IDR"
+              }
+            },
+            {
+              "name": {
+                "value": "ILS"
+              }
+            },
+            {
+              "name": {
+                "value": "INR"
+              }
+            },
+            {
+              "name": {
+                "value": "IQD"
+              }
+            },
+            {
+              "name": {
+                "value": "IRR"
+              }
+            },
+            {
+              "name": {
+                "value": "ISK"
+              }
+            },
+            {
+              "name": {
+                "value": "JEP"
+              }
+            },
+            {
+              "name": {
+                "value": "JMD"
+              }
+            },
+            {
+              "name": {
+                "value": "JOD"
+              }
+            },
+            {
+              "name": {
+                "value": "JPY"
+              }
+            },
+            {
+              "name": {
+                "value": "KES"
+              }
+            },
+            {
+              "name": {
+                "value": "KGS"
+              }
+            },
+            {
+              "name": {
+                "value": "KHR"
+              }
+            },
+            {
+              "name": {
+                "value": "KMF"
+              }
+            },
+            {
+              "name": {
+                "value": "KPW"
+              }
+            },
+            {
+              "name": {
+                "value": "KRW"
+              }
+            },
+            {
+              "name": {
+                "value": "KWD"
+              }
+            },
+            {
+              "name": {
+                "value": "KYD"
+              }
+            },
+            {
+              "name": {
+                "value": "KZT"
+              }
+            },
+            {
+              "name": {
+                "value": "LAK"
+              }
+            },
+            {
+              "name": {
+                "value": "LBP"
+              }
+            },
+            {
+              "name": {
+                "value": "LKR"
+              }
+            },
+            {
+              "name": {
+                "value": "LRD"
+              }
+            },
+            {
+              "name": {
+                "value": "LSL"
+              }
+            },
+            {
+              "name": {
+                "value": "LYD"
+              }
+            },
+            {
+              "name": {
+                "value": "MAD"
+              }
+            },
+            {
+              "name": {
+                "value": "MDL"
+              }
+            },
+            {
+              "name": {
+                "value": "MGA"
+              }
+            },
+            {
+              "name": {
+                "value": "MKD"
+              }
+            },
+            {
+              "name": {
+                "value": "MMK"
+              }
+            },
+            {
+              "name": {
+                "value": "MNT"
+              }
+            },
+            {
+              "name": {
+                "value": "MOP"
+              }
+            },
+            {
+              "name": {
+                "value": "MRO"
+              }
+            },
+            {
+              "name": {
+                "value": "MRU"
+              }
+            },
+            {
+              "name": {
+                "value": "MUR"
+              }
+            },
+            {
+              "name": {
+                "value": "MVR"
+              }
+            },
+            {
+              "name": {
+                "value": "MWK"
+              }
+            },
+            {
+              "name": {
+                "value": "MXN"
+              }
+            },
+            {
+              "name": {
+                "value": "MYR"
+              }
+            },
+            {
+              "name": {
+                "value": "MZN"
+              }
+            },
+            {
+              "name": {
+                "value": "NAD"
+              }
+            },
+            {
+              "name": {
+                "value": "NGN"
+              }
+            },
+            {
+              "name": {
+                "value": "NOK"
+              }
+            },
+            {
+              "name": {
+                "value": "NPR"
+              }
+            },
+            {
+              "name": {
+                "value": "NZD"
+              }
+            },
+            {
+              "name": {
+                "value": "OMR"
+              }
+            },
+            {
+              "name": {
+                "value": "PAB"
+              }
+            },
+            {
+              "name": {
+                "value": "PEN"
+              }
+            },
+            {
+              "name": {
+                "value": "PGK"
+              }
+            },
+            {
+              "name": {
+                "value": "PHP"
+              }
+            },
+            {
+              "name": {
+                "value": "PKR"
+              }
+            },
+            {
+              "name": {
+                "value": "PLN"
+              }
+            },
+            {
+              "name": {
+                "value": "PYG"
+              }
+            },
+            {
+              "name": {
+                "value": "QAR"
+              }
+            },
+            {
+              "name": {
+                "value": "RON"
+              }
+            },
+            {
+              "name": {
+                "value": "RSD"
+              }
+            },
+            {
+              "name": {
+                "value": "RUB"
+              }
+            },
+            {
+              "name": {
+                "value": "RUR"
+              }
+            },
+            {
+              "name": {
+                "value": "RWF"
+              }
+            },
+            {
+              "name": {
+                "value": "SAR"
+              }
+            },
+            {
+              "name": {
+                "value": "SBDf"
+              }
+            },
+            {
+              "name": {
+                "value": "SCR"
+              }
+            },
+            {
+              "name": {
+                "value": "SDG"
+              }
+            },
+            {
+              "name": {
+                "value": "SDR"
+              }
+            },
+            {
+              "name": {
+                "value": "SEK"
+              }
+            },
+            {
+              "name": {
+                "value": "SGD"
+              }
+            },
+            {
+              "name": {
+                "value": "SHP"
+              }
+            },
+            {
+              "name": {
+                "value": "SLL"
+              }
+            },
+            {
+              "name": {
+                "value": "SOS"
+              }
+            },
+            {
+              "name": {
+                "value": "SRD"
+              }
+            },
+            {
+              "name": {
+                "value": "SYP"
+              }
+            },
+            {
+              "name": {
+                "value": "SZL"
+              }
+            },
+            {
+              "name": {
+                "value": "THB"
+              }
+            },
+            {
+              "name": {
+                "value": "TJS"
+              }
+            },
+            {
+              "name": {
+                "value": "TMT"
+              }
+            },
+            {
+              "name": {
+                "value": "TND"
+              }
+            },
+            {
+              "name": {
+                "value": "TOP"
+              }
+            },
+            {
+              "name": {
+                "value": "TRY"
+              }
+            },
+            {
+              "name": {
+                "value": "TTD"
+              }
+            },
+            {
+              "name": {
+                "value": "TWD"
+              }
+            },
+            {
+              "name": {
+                "value": "TZS"
+              }
+            },
+            {
+              "name": {
+                "value": "UAH"
+              }
+            },
+            {
+              "name": {
+                "value": "UGX"
+              }
+            },
+            {
+              "name": {
+                "value": "USD"
+              }
+            },
+            {
+              "name": {
+                "value": "UYU"
+              }
+            },
+            {
+              "name": {
+                "value": "UZS"
+              }
+            },
+            {
+              "name": {
+                "value": "VND"
+              }
+            },
+            {
+              "name": {
+                "value": "VUV"
+              }
+            },
+            {
+              "name": {
+                "value": "WST"
+              }
+            },
+            {
+              "name": {
+                "value": "XAF"
+              }
+            },
+            {
+              "name": {
+                "value": "XCD"
+              }
+            },
+            {
+              "name": {
+                "value": "XDR"
+              }
+            },
+            {
+              "name": {
+                "value": "XOF"
+              }
+            },
+            {
+              "name": {
+                "value": "XPF"
+              }
+            },
+            {
+              "name": {
+                "value": "YER"
+              }
+            },
+            {
+              "name": {
+                "value": "ZAR"
+              }
+            },
+            {
+              "name": {
+                "value": "ZMW"
+              }
+            },
+            {
+              "name": {
+                "value": "ZWL"
+              }
+            },
+            {
+              "name": {
+                "value": "United Arab Emirates Dirham"
+              }
+            },
+            {
+              "name": {
+                "value": "Afghan Afghani"
+              }
+            },
+            {
+              "name": {
+                "value": "Albanian Lek"
+              }
+            },
+            {
+              "name": {
+                "value": "Armenian Dram"
+              }
+            },
+            {
+              "name": {
+                "value": "Netherlands Antillean Guilder"
+              }
+            },
+            {
+              "name": {
+                "value": "Angolan Kwanza"
+              }
+            },
+            {
+              "name": {
+                "value": "Argentine Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Australian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Aruban Florin"
+              }
+            },
+            {
+              "name": {
+                "value": "Azerbaijani Manat"
+              }
+            },
+            {
+              "name": {
+                "value": "Bosnia-Herzegovina Convertible Mark"
+              }
+            },
+            {
+              "name": {
+                "value": "Barbadian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Bangladeshi Taka"
+              }
+            },
+            {
+              "name": {
+                "value": "Bulgarian Lev"
+              }
+            },
+            {
+              "name": {
+                "value": "Bahraini Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Burundian Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Bermudan Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Brunei Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Bolivian Boliviano"
+              }
+            },
+            {
+              "name": {
+                "value": "Brazilian Real"
+              }
+            },
+            {
+              "name": {
+                "value": "Bahamian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Bhutanese Ngultrum"
+              }
+            },
+            {
+              "name": {
+                "value": "Botswanan Pula"
+              }
+            },
+            {
+              "name": {
+                "value": "Belize Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Canadian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Congolese Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Swiss Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Chilean Unit of Account UF"
+              }
+            },
+            {
+              "name": {
+                "value": "Chilean Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Chinese Yuan Offshore"
+              }
+            },
+            {
+              "name": {
+                "value": "Chinese Yuan"
+              }
+            },
+            {
+              "name": {
+                "value": "Colombian Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Cuban Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Cape Verdean Escudo"
+              }
+            },
+            {
+              "name": {
+                "value": "Czech Republic Koruna"
+              }
+            },
+            {
+              "name": {
+                "value": "Djiboutian Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Danish Krone"
+              }
+            },
+            {
+              "name": {
+                "value": "Dominican Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Algerian Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Egyptian Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Eritrean Nakfa"
+              }
+            },
+            {
+              "name": {
+                "value": "Ethiopian Birr"
+              }
+            },
+            {
+              "name": {
+                "value": "Euro"
+              }
+            },
+            {
+              "name": {
+                "value": "Fijian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Falkland Islands Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "British Pound Sterling"
+              }
+            },
+            {
+              "name": {
+                "value": "Georgian Lari"
+              }
+            },
+            {
+              "name": {
+                "value": "Ghanaian Cedi"
+              }
+            },
+            {
+              "name": {
+                "value": "Gibraltar Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Gambian Dalasi"
+              }
+            },
+            {
+              "name": {
+                "value": "Guinean Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Guatemalan Quetzal"
+              }
+            },
+            {
+              "name": {
+                "value": "Guyanaese Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Hong Kong Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Honduran Lempira"
+              }
+            },
+            {
+              "name": {
+                "value": "Croatian Kuna"
+              }
+            },
+            {
+              "name": {
+                "value": "Haitian Gourde"
+              }
+            },
+            {
+              "name": {
+                "value": "Hungarian Forint"
+              }
+            },
+            {
+              "name": {
+                "value": "Internet Computer"
+              }
+            },
+            {
+              "name": {
+                "value": "Indonesian Rupiah"
+              }
+            },
+            {
+              "name": {
+                "value": "Israeli New Sheqel"
+              }
+            },
+            {
+              "name": {
+                "value": "Indian Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "Iraqi Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Iranian Rial"
+              }
+            },
+            {
+              "name": {
+                "value": "Icelandic Krona"
+              }
+            },
+            {
+              "name": {
+                "value": "Jersey Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Jamaican Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Jordanian Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Japanese Yen"
+              }
+            },
+            {
+              "name": {
+                "value": "Kenyan Shilling"
+              }
+            },
+            {
+              "name": {
+                "value": "Kyrgystani Som"
+              }
+            },
+            {
+              "name": {
+                "value": "Cambodian Riel"
+              }
+            },
+            {
+              "name": {
+                "value": "Comorian Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "North Korean Won"
+              }
+            },
+            {
+              "name": {
+                "value": "South Korean Won"
+              }
+            },
+            {
+              "name": {
+                "value": "Kuwaiti Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Cayman Islands Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Kazakhstani Tenge"
+              }
+            },
+            {
+              "name": {
+                "value": "Laotian Kip"
+              }
+            },
+            {
+              "name": {
+                "value": "Lebanese Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Sri Lankan Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "Liberian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Lesotho Loti"
+              }
+            },
+            {
+              "name": {
+                "value": "Libyan Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Moroccan Dirham"
+              }
+            },
+            {
+              "name": {
+                "value": "Moldovan Leu"
+              }
+            },
+            {
+              "name": {
+                "value": "Malagasy Ariary"
+              }
+            },
+            {
+              "name": {
+                "value": "Macedonian Denar"
+              }
+            },
+            {
+              "name": {
+                "value": "Myanma Kyat"
+              }
+            },
+            {
+              "name": {
+                "value": "Mongolian Tugrik"
+              }
+            },
+            {
+              "name": {
+                "value": "Macanese Pataca"
+              }
+            },
+            {
+              "name": {
+                "value": "Mauritanian Ouguiya (pre-2018)"
+              }
+            },
+            {
+              "name": {
+                "value": "Mauritanian Ouguiya"
+              }
+            },
+            {
+              "name": {
+                "value": "Mauritian Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "Maldivian Rufiyaa"
+              }
+            },
+            {
+              "name": {
+                "value": "Malawian Kwacha"
+              }
+            },
+            {
+              "name": {
+                "value": "Mexican Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Malaysian Ringgit"
+              }
+            },
+            {
+              "name": {
+                "value": "Mozambican Metical"
+              }
+            },
+            {
+              "name": {
+                "value": "Namibian Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Nigerian Naira"
+              }
+            },
+            {
+              "name": {
+                "value": "Norwegian Krone"
+              }
+            },
+            {
+              "name": {
+                "value": "Nepalese Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "New Zealand Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Omani Rial"
+              }
+            },
+            {
+              "name": {
+                "value": "Panamanian Balboa"
+              }
+            },
+            {
+              "name": {
+                "value": "Peruvian Nuevo Sol"
+              }
+            },
+            {
+              "name": {
+                "value": "Papua New Guinean Kina"
+              }
+            },
+            {
+              "name": {
+                "value": "Philippine Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Pakistani Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "Polish Zloty"
+              }
+            },
+            {
+              "name": {
+                "value": "Paraguayan Guarani"
+              }
+            },
+            {
+              "name": {
+                "value": "Qatari Rial"
+              }
+            },
+            {
+              "name": {
+                "value": "Romanian Leu"
+              }
+            },
+            {
+              "name": {
+                "value": "Serbian Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Russian Ruble"
+              }
+            },
+            {
+              "name": {
+                "value": "Old Russian Ruble"
+              }
+            },
+            {
+              "name": {
+                "value": "Rwandan Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Saudi Riyal"
+              }
+            },
+            {
+              "name": {
+                "value": "Solomon Islands Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Seychellois Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "Sudanese Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Special Drawing Rights"
+              }
+            },
+            {
+              "name": {
+                "value": "Swedish Krona"
+              }
+            },
+            {
+              "name": {
+                "value": "Singapore Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Saint Helena Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Sierra Leonean Leone"
+              }
+            },
+            {
+              "name": {
+                "value": "Somali Shilling"
+              }
+            },
+            {
+              "name": {
+                "value": "Surinamese Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Syrian Pound"
+              }
+            },
+            {
+              "name": {
+                "value": "Swazi Lilangeni"
+              }
+            },
+            {
+              "name": {
+                "value": "Thai Baht"
+              }
+            },
+            {
+              "name": {
+                "value": "Tajikistani Somoni"
+              }
+            },
+            {
+              "name": {
+                "value": "Turkmenistani Manat"
+              }
+            },
+            {
+              "name": {
+                "value": "Tunisian Dinar"
+              }
+            },
+            {
+              "name": {
+                "value": "Tongan Pa'anga"
+              }
+            },
+            {
+              "name": {
+                "value": "Turkish Lira"
+              }
+            },
+            {
+              "name": {
+                "value": "Trinidad and Tobago Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "New Taiwan Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Tanzanian Shilling"
+              }
+            },
+            {
+              "name": {
+                "value": "Ukrainian Hryvnia"
+              }
+            },
+            {
+              "name": {
+                "value": "Ugandan Shilling"
+              }
+            },
+            {
+              "name": {
+                "value": "United States Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Uruguayan Peso"
+              }
+            },
+            {
+              "name": {
+                "value": "Uzbekistan Som"
+              }
+            },
+            {
+              "name": {
+                "value": "Vietnamese Dong"
+              }
+            },
+            {
+              "name": {
+                "value": "Vanuatu Vatu"
+              }
+            },
+            {
+              "name": {
+                "value": "Samoan Tala"
+              }
+            },
+            {
+              "name": {
+                "value": "CFA Franc BEAC"
+              }
+            },
+            {
+              "name": {
+                "value": "East Caribbean Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "Special Drawing Rights"
+              }
+            },
+            {
+              "name": {
+                "value": "CFA Franc BCEAO"
+              }
+            },
+            {
+              "name": {
+                "value": "CFP Franc"
+              }
+            },
+            {
+              "name": {
+                "value": "Yemeni Rial"
+              }
+            },
+            {
+              "name": {
+                "value": "South African Rand"
+              }
+            },
+            {
+              "name": {
+                "value": "Zambian Kwacha"
+              }
+            },
+            {
+              "name": {
+                "value": "Zimbabwean Dollar"
+              }
+            },
+            {
+              "name": {
+                "value": "1ST"
+              }
+            },
+            {
+              "name": {
+                "value": "2GIVE"
+              }
+            },
+            {
+              "name": {
+                "value": "808"
+              }
+            },
+            {
+              "name": {
+                "value": "AAVE"
+              }
+            },
+            {
+              "name": {
+                "value": "ABT"
+              }
+            },
+            {
+              "name": {
+                "value": "ABY"
+              }
+            },
+            {
+              "name": {
+                "value": "AC"
+              }
+            },
+            {
+              "name": {
+                "value": "ACT"
+              }
+            },
+            {
+              "name": {
+                "value": "ADA"
+              }
+            },
+            {
+              "name": {
+                "value": "ADT"
+              }
+            },
+            {
+              "name": {
+                "value": "ADX"
+              }
+            },
+            {
+              "name": {
+                "value": "AE"
+              }
+            },
+            {
+              "name": {
+                "value": "AEON"
+              }
+            },
+            {
+              "name": {
+                "value": "AGI"
+              }
+            },
+            {
+              "name": {
+                "value": "AGRS"
+              }
+            },
+            {
+              "name": {
+                "value": "AI"
+              }
+            },
+            {
+              "name": {
+                "value": "AID"
+              }
+            },
+            {
+              "name": {
+                "value": "AION"
+              }
+            },
+            {
+              "name": {
+                "value": "AIR"
+              }
+            },
+            {
+              "name": {
+                "value": "AKY"
+              }
+            },
+            {
+              "name": {
+                "value": "ALGO"
+              }
+            },
+            {
+              "name": {
+                "value": "ALIS"
+              }
+            },
+            {
+              "name": {
+                "value": "AMBER"
+              }
+            },
+            {
+              "name": {
+                "value": "AMP"
+              }
+            },
+            {
+              "name": {
+                "value": "AMPL"
+              }
+            },
+            {
+              "name": {
+                "value": "ANC"
+              }
+            },
+            {
+              "name": {
+                "value": "ANT"
+              }
+            },
+            {
+              "name": {
+                "value": "APPC"
+              }
+            },
+            {
+              "name": {
+                "value": "APX"
+              }
+            },
+            {
+              "name": {
+                "value": "ARDR"
+              }
+            },
+            {
+              "name": {
+                "value": "ARK"
+              }
+            },
+            {
+              "name": {
+                "value": "ARN"
+              }
+            },
+            {
+              "name": {
+                "value": "AST"
+              }
+            },
+            {
+              "name": {
+                "value": "ATB"
+              }
+            },
+            {
+              "name": {
+                "value": "ATM"
+              }
+            },
+            {
+              "name": {
+                "value": "ATOM"
+              }
+            },
+            {
+              "name": {
+                "value": "ATS"
+              }
+            },
+            {
+              "name": {
+                "value": "AUR"
+              }
+            },
+            {
+              "name": {
+                "value": "AVAX"
+              }
+            },
+            {
+              "name": {
+                "value": "AVT"
+              }
+            },
+            {
+              "name": {
+                "value": "B3"
+              }
+            },
+            {
+              "name": {
+                "value": "BAND"
+              }
+            },
+            {
+              "name": {
+                "value": "BAT"
+              }
+            },
+            {
+              "name": {
+                "value": "BAY"
+              }
+            },
+            {
+              "name": {
+                "value": "BBR"
+              }
+            },
+            {
+              "name": {
+                "value": "BCAP"
+              }
+            },
+            {
+              "name": {
+                "value": "BCC"
+              }
+            },
+            {
+              "name": {
+                "value": "BCD"
+              }
+            },
+            {
+              "name": {
+                "value": "BCH"
+              }
+            },
+            {
+              "name": {
+                "value": "BCN"
+              }
+            },
+            {
+              "name": {
+                "value": "BCPT"
+              }
+            },
+            {
+              "name": {
+                "value": "BCX"
+              }
+            },
+            {
+              "name": {
+                "value": "BCY"
+              }
+            },
+            {
+              "name": {
+                "value": "BDL"
+              }
+            },
+            {
+              "name": {
+                "value": "BEE"
+              }
+            },
+            {
+              "name": {
+                "value": "BELA"
+              }
+            },
+            {
+              "name": {
+                "value": "BET"
+              }
+            },
+            {
+              "name": {
+                "value": "BFT"
+              }
+            },
+            {
+              "name": {
+                "value": "BIS"
+              }
+            },
+            {
+              "name": {
+                "value": "BITB"
+              }
+            },
+            {
+              "name": {
+                "value": "BITBTC"
+              }
+            },
+            {
+              "name": {
+                "value": "BITCNY"
+              }
+            },
+            {
+              "name": {
+                "value": "BITEUR"
+              }
+            },
+            {
+              "name": {
+                "value": "BITGOLD"
+              }
+            },
+            {
+              "name": {
+                "value": "BITSILVER"
+              }
+            },
+            {
+              "name": {
+                "value": "BITUSD"
+              }
+            },
+            {
+              "name": {
+                "value": "BIX"
+              }
+            },
+            {
+              "name": {
+                "value": "BLITZ"
+              }
+            },
+            {
+              "name": {
+                "value": "BLK"
+              }
+            },
+            {
+              "name": {
+                "value": "BLN"
+              }
+            },
+            {
+              "name": {
+                "value": "BLOCK"
+              }
+            },
+            {
+              "name": {
+                "value": "BLZ"
+              }
+            },
+            {
+              "name": {
+                "value": "BMC"
+              }
+            },
+            {
+              "name": {
+                "value": "BNB"
+              }
+            },
+            {
+              "name": {
+                "value": "BNT"
+              }
+            },
+            {
+              "name": {
+                "value": "BNTY"
+              }
+            },
+            {
+              "name": {
+                "value": "BOST"
+              }
+            },
+            {
+              "name": {
+                "value": "BOT"
+              }
+            },
+            {
+              "name": {
+                "value": "BQ"
+              }
+            },
+            {
+              "name": {
+                "value": "BRD"
+              }
+            },
+            {
+              "name": {
+                "value": "BRK"
+              }
+            },
+            {
+              "name": {
+                "value": "BRX"
+              }
+            },
+            {
+              "name": {
+                "value": "BSV"
+              }
+            },
+            {
+              "name": {
+                "value": "BTA"
+              }
+            },
+            {
+              "name": {
+                "value": "BTC"
+              }
+            },
+            {
+              "name": {
+                "value": "BTCB"
+              }
+            },
+            {
+              "name": {
+                "value": "BTCD"
+              }
+            },
+            {
+              "name": {
+                "value": "BTCP"
+              }
+            },
+            {
+              "name": {
+                "value": "BTG"
+              }
+            },
+            {
+              "name": {
+                "value": "BTM"
+              }
+            },
+            {
+              "name": {
+                "value": "BTS"
+              }
+            },
+            {
+              "name": {
+                "value": "BTSR"
+              }
+            },
+            {
+              "name": {
+                "value": "BTT"
+              }
+            },
+            {
+              "name": {
+                "value": "BTX"
+              }
+            },
+            {
+              "name": {
+                "value": "BURST"
+              }
+            },
+            {
+              "name": {
+                "value": "BUSD"
+              }
+            },
+            {
+              "name": {
+                "value": "BUZZ"
+              }
+            },
+            {
+              "name": {
+                "value": "BYC"
+              }
+            },
+            {
+              "name": {
+                "value": "BYTOM"
+              }
+            },
+            {
+              "name": {
+                "value": "C20"
+              }
+            },
+            {
+              "name": {
+                "value": "CAKE"
+              }
+            },
+            {
+              "name": {
+                "value": "CANN"
+              }
+            },
+            {
+              "name": {
+                "value": "CAT"
+              }
+            },
+            {
+              "name": {
+                "value": "CCRB"
+              }
+            },
+            {
+              "name": {
+                "value": "CDT"
+              }
+            },
+            {
+              "name": {
+                "value": "CFI"
+              }
+            },
+            {
+              "name": {
+                "value": "CHAT"
+              }
+            },
+            {
+              "name": {
+                "value": "CHIPS"
+              }
+            },
+            {
+              "name": {
+                "value": "CLAM"
+              }
+            },
+            {
+              "name": {
+                "value": "CLOAK"
+              }
+            },
+            {
+              "name": {
+                "value": "CMP"
+              }
+            },
+            {
+              "name": {
+                "value": "CMT"
+              }
+            },
+            {
+              "name": {
+                "value": "CND"
+              }
+            },
+            {
+              "name": {
+                "value": "CNX"
+              }
+            },
+            {
+              "name": {
+                "value": "COFI"
+              }
+            },
+            {
+              "name": {
+                "value": "COMP"
+              }
+            },
+            {
+              "name": {
+                "value": "COSS"
+              }
+            },
+            {
+              "name": {
+                "value": "COVAL"
+              }
+            },
+            {
+              "name": {
+                "value": "CRBIT"
+              }
+            },
+            {
+              "name": {
+                "value": "CREA"
+              }
+            },
+            {
+              "name": {
+                "value": "CREDO"
+              }
+            },
+            {
+              "name": {
+                "value": "CRO"
+              }
+            },
+            {
+              "name": {
+                "value": "CRW"
+              }
+            },
+            {
+              "name": {
+                "value": "CSNO"
+              }
+            },
+            {
+              "name": {
+                "value": "CTR"
+              }
+            },
+            {
+              "name": {
+                "value": "CTXC"
+              }
+            },
+            {
+              "name": {
+                "value": "CURE"
+              }
+            },
+            {
+              "name": {
+                "value": "CVC"
+              }
+            },
+            {
+              "name": {
+                "value": "DAI"
+              }
+            },
+            {
+              "name": {
+                "value": "DAR"
+              }
+            },
+            {
+              "name": {
+                "value": "DASH"
+              }
+            },
+            {
+              "name": {
+                "value": "DATA"
+              }
+            },
+            {
+              "name": {
+                "value": "DAY"
+              }
+            },
+            {
+              "name": {
+                "value": "DBC"
+              }
+            },
+            {
+              "name": {
+                "value": "DBIX"
+              }
+            },
+            {
+              "name": {
+                "value": "DCN"
+              }
+            },
+            {
+              "name": {
+                "value": "DCR"
+              }
+            },
+            {
+              "name": {
+                "value": "DCT"
+              }
+            },
+            {
+              "name": {
+                "value": "DDF"
+              }
+            },
+            {
+              "name": {
+                "value": "DENT"
+              }
+            },
+            {
+              "name": {
+                "value": "DFS"
+              }
+            },
+            {
+              "name": {
+                "value": "DGB"
+              }
+            },
+            {
+              "name": {
+                "value": "DGC"
+              }
+            },
+            {
+              "name": {
+                "value": "DGD"
+              }
+            },
+            {
+              "name": {
+                "value": "DICE"
+              }
+            },
+            {
+              "name": {
+                "value": "DLT"
+              }
+            },
+            {
+              "name": {
+                "value": "DMD"
+              }
+            },
+            {
+              "name": {
+                "value": "DMT"
+              }
+            },
+            {
+              "name": {
+                "value": "DNT"
+              }
+            },
+            {
+              "name": {
+                "value": "DOGE"
+              }
+            },
+            {
+              "name": {
+                "value": "DOPE"
+              }
+            },
+            {
+              "name": {
+                "value": "DOT"
+              }
+            },
+            {
+              "name": {
+                "value": "DRGN"
+              }
+            },
+            {
+              "name": {
+                "value": "DTA"
+              }
+            },
+            {
+              "name": {
+                "value": "DTB"
+              }
+            },
+            {
+              "name": {
+                "value": "DYN"
+              }
+            },
+            {
+              "name": {
+                "value": "EAC"
+              }
+            },
+            {
+              "name": {
+                "value": "EBST"
+              }
+            },
+            {
+              "name": {
+                "value": "EBTC"
+              }
+            },
+            {
+              "name": {
+                "value": "ECC"
+              }
+            },
+            {
+              "name": {
+                "value": "ECN"
+              }
+            },
+            {
+              "name": {
+                "value": "EDG"
+              }
+            },
+            {
+              "name": {
+                "value": "EDO"
+              }
+            },
+            {
+              "name": {
+                "value": "EFL"
+              }
+            },
+            {
+              "name": {
+                "value": "EGC"
+              }
+            },
+            {
+              "name": {
+                "value": "EGLD"
+              }
+            },
+            {
+              "name": {
+                "value": "EKT"
+              }
+            },
+            {
+              "name": {
+                "value": "ELA"
+              }
+            },
+            {
+              "name": {
+                "value": "ELEC"
+              }
+            },
+            {
+              "name": {
+                "value": "ELF"
+              }
+            },
+            {
+              "name": {
+                "value": "ELIX"
+              }
+            },
+            {
+              "name": {
+                "value": "EMB"
+              }
+            },
+            {
+              "name": {
+                "value": "EMC"
+              }
+            },
+            {
+              "name": {
+                "value": "EMC2"
+              }
+            },
+            {
+              "name": {
+                "value": "ENG"
+              }
+            },
+            {
+              "name": {
+                "value": "ENJ"
+              }
+            },
+            {
+              "name": {
+                "value": "ENRG"
+              }
+            },
+            {
+              "name": {
+                "value": "EOS"
+              }
+            },
+            {
+              "name": {
+                "value": "EOT"
+              }
+            },
+            {
+              "name": {
+                "value": "EQT"
+              }
+            },
+            {
+              "name": {
+                "value": "ERC"
+              }
+            },
+            {
+              "name": {
+                "value": "ETC"
+              }
+            },
+            {
+              "name": {
+                "value": "ETH"
+              }
+            },
+            {
+              "name": {
+                "value": "ETHD"
+              }
+            },
+            {
+              "name": {
+                "value": "ETHOS"
+              }
+            },
+            {
+              "name": {
+                "value": "ETN"
+              }
+            },
+            {
+              "name": {
+                "value": "ETP"
+              }
+            },
+            {
+              "name": {
+                "value": "ETT"
+              }
+            },
+            {
+              "name": {
+                "value": "EVE"
+              }
+            },
+            {
+              "name": {
+                "value": "EVX"
+              }
+            },
+            {
+              "name": {
+                "value": "EXCL"
+              }
+            },
+            {
+              "name": {
+                "value": "EXP"
+              }
+            },
+            {
+              "name": {
+                "value": "FCT"
+              }
+            },
+            {
+              "name": {
+                "value": "FIL"
+              }
+            },
+            {
+              "name": {
+                "value": "FLDC"
+              }
+            },
+            {
+              "name": {
+                "value": "FLO"
+              }
+            },
+            {
+              "name": {
+                "value": "FLT"
+              }
+            },
+            {
+              "name": {
+                "value": "FRST"
+              }
+            },
+            {
+              "name": {
+                "value": "FTC"
+              }
+            },
+            {
+              "name": {
+                "value": "FTT"
+              }
+            },
+            {
+              "name": {
+                "value": "FUEL"
+              }
+            },
+            {
+              "name": {
+                "value": "FUN"
+              }
+            },
+            {
+              "name": {
+                "value": "GAM"
+              }
+            },
+            {
+              "name": {
+                "value": "GAME"
+              }
+            },
+            {
+              "name": {
+                "value": "GAS"
+              }
+            },
+            {
+              "name": {
+                "value": "GBG"
+              }
+            },
+            {
+              "name": {
+                "value": "GBX"
+              }
+            },
+            {
+              "name": {
+                "value": "GBYTE"
+              }
+            },
+            {
+              "name": {
+                "value": "GCR"
+              }
+            },
+            {
+              "name": {
+                "value": "GEO"
+              }
+            },
+            {
+              "name": {
+                "value": "GLD"
+              }
+            },
+            {
+              "name": {
+                "value": "GNO"
+              }
+            },
+            {
+              "name": {
+                "value": "GNT"
+              }
+            },
+            {
+              "name": {
+                "value": "GOLOS"
+              }
+            },
+            {
+              "name": {
+                "value": "GRC"
+              }
+            },
+            {
+              "name": {
+                "value": "GRT"
+              }
+            },
+            {
+              "name": {
+                "value": "GRS"
+              }
+            },
+            {
+              "name": {
+                "value": "GRWI"
+              }
+            },
+            {
+              "name": {
+                "value": "GTC"
+              }
+            },
+            {
+              "name": {
+                "value": "GTO"
+              }
+            },
+            {
+              "name": {
+                "value": "GUP"
+              }
+            },
+            {
+              "name": {
+                "value": "GVT"
+              }
+            },
+            {
+              "name": {
+                "value": "GXS"
+              }
+            },
+            {
+              "name": {
+                "value": "HBAR"
+              }
+            },
+            {
+              "name": {
+                "value": "HBN"
+              }
+            },
+            {
+              "name": {
+                "value": "HEAT"
+              }
+            },
+            {
+              "name": {
+                "value": "HMQ"
+              }
+            },
+            {
+              "name": {
+                "value": "HPB"
+              }
+            },
+            {
+              "name": {
+                "value": "HSR"
+              }
+            },
+            {
+              "name": {
+                "value": "HT"
+              }
+            },
+            {
+              "name": {
+                "value": "HUSH"
+              }
+            },
+            {
+              "name": {
+                "value": "HVN"
+              }
+            },
+            {
+              "name": {
+                "value": "HXX"
+              }
+            },
+            {
+              "name": {
+                "value": "ICN"
+              }
+            },
+            {
+              "name": {
+                "value": "ICX"
+              }
+            },
+            {
+              "name": {
+                "value": "IFC"
+              }
+            },
+            {
+              "name": {
+                "value": "IFT"
+              }
+            },
+            {
+              "name": {
+                "value": "IGNIS"
+              }
+            },
+            {
+              "name": {
+                "value": "INCNT"
+              }
+            },
+            {
+              "name": {
+                "value": "IND"
+              }
+            },
+            {
+              "name": {
+                "value": "INF"
+              }
+            },
+            {
+              "name": {
+                "value": "INK"
+              }
+            },
+            {
+              "name": {
+                "value": "INS"
+              }
+            },
+            {
+              "name": {
+                "value": "INSTAR"
+              }
+            },
+            {
+              "name": {
+                "value": "INT"
+              }
+            },
+            {
+              "name": {
+                "value": "INXT"
+              }
+            },
+            {
+              "name": {
+                "value": "IOC"
+              }
+            },
+            {
+              "name": {
+                "value": "ION"
+              }
+            },
+            {
+              "name": {
+                "value": "IOP"
+              }
+            },
+            {
+              "name": {
+                "value": "IOST"
+              }
+            },
+            {
+              "name": {
+                "value": "IOTA"
+              }
+            },
+            {
+              "name": {
+                "value": "IOTX"
+              }
+            },
+            {
+              "name": {
+                "value": "IQT"
+              }
+            },
+            {
+              "name": {
+                "value": "ITC"
+              }
+            },
+            {
+              "name": {
+                "value": "IXC"
+              }
+            },
+            {
+              "name": {
+                "value": "IXT"
+              }
+            },
+            {
+              "name": {
+                "value": "J8T"
+              }
+            },
+            {
+              "name": {
+                "value": "JNT"
+              }
+            },
+            {
+              "name": {
+                "value": "KCS"
+              }
+            },
+            {
+              "name": {
+                "value": "KICK"
+              }
+            },
+            {
+              "name": {
+                "value": "KIN"
+              }
+            },
+            {
+              "name": {
+                "value": "KLAY"
+              }
+            },
+            {
+              "name": {
+                "value": "KMD"
+              }
+            },
+            {
+              "name": {
+                "value": "KNC"
+              }
+            },
+            {
+              "name": {
+                "value": "KORE"
+              }
+            },
+            {
+              "name": {
+                "value": "KSM"
+              }
+            },
+            {
+              "name": {
+                "value": "LBC"
+              }
+            },
+            {
+              "name": {
+                "value": "LCC"
+              }
+            },
+            {
+              "name": {
+                "value": "LEND"
+              }
+            },
+            {
+              "name": {
+                "value": "LEO"
+              }
+            },
+            {
+              "name": {
+                "value": "LEV"
+              }
+            },
+            {
+              "name": {
+                "value": "LGD"
+              }
+            },
+            {
+              "name": {
+                "value": "LINDA"
+              }
+            },
+            {
+              "name": {
+                "value": "LINK"
+              }
+            },
+            {
+              "name": {
+                "value": "LKK"
+              }
+            },
+            {
+              "name": {
+                "value": "LMC"
+              }
+            },
+            {
+              "name": {
+                "value": "LOCI"
+              }
+            },
+            {
+              "name": {
+                "value": "LOOM"
+              }
+            },
+            {
+              "name": {
+                "value": "LRC"
+              }
+            },
+            {
+              "name": {
+                "value": "LSK"
+              }
+            },
+            {
+              "name": {
+                "value": "LTC"
+              }
+            },
+            {
+              "name": {
+                "value": "LUN"
+              }
+            },
+            {
+              "name": {
+                "value": "LUNA"
+              }
+            },
+            {
+              "name": {
+                "value": "MAID"
+              }
+            },
+            {
+              "name": {
+                "value": "MANA"
+              }
+            },
+            {
+              "name": {
+                "value": "MATIC"
+              }
+            },
+            {
+              "name": {
+                "value": "MAX"
+              }
+            },
+            {
+              "name": {
+                "value": "MBRS"
+              }
+            },
+            {
+              "name": {
+                "value": "MCAP"
+              }
+            },
+            {
+              "name": {
+                "value": "MCO"
+              }
+            },
+            {
+              "name": {
+                "value": "MDA"
+              }
+            },
+            {
+              "name": {
+                "value": "MEC"
+              }
+            },
+            {
+              "name": {
+                "value": "MED"
+              }
+            },
+            {
+              "name": {
+                "value": "MEME"
+              }
+            },
+            {
+              "name": {
+                "value": "MER"
+              }
+            },
+            {
+              "name": {
+                "value": "MGC"
+              }
+            },
+            {
+              "name": {
+                "value": "MGO"
+              }
+            },
+            {
+              "name": {
+                "value": "MINEX"
+              }
+            },
+            {
+              "name": {
+                "value": "MINT"
+              }
+            },
+            {
+              "name": {
+                "value": "MIOTA"
+              }
+            },
+            {
+              "name": {
+                "value": "MITH"
+              }
+            },
+            {
+              "name": {
+                "value": "MKR"
+              }
+            },
+            {
+              "name": {
+                "value": "MLN"
+              }
+            },
+            {
+              "name": {
+                "value": "MNE"
+              }
+            },
+            {
+              "name": {
+                "value": "MNX"
+              }
+            },
+            {
+              "name": {
+                "value": "MOD"
+              }
+            },
+            {
+              "name": {
+                "value": "MONA"
+              }
+            },
+            {
+              "name": {
+                "value": "MRT"
+              }
+            },
+            {
+              "name": {
+                "value": "MSP"
+              }
+            },
+            {
+              "name": {
+                "value": "MTH"
+              }
+            },
+            {
+              "name": {
+                "value": "MTN"
+              }
+            },
+            {
+              "name": {
+                "value": "MUE"
+              }
+            },
+            {
+              "name": {
+                "value": "MUSIC"
+              }
+            },
+            {
+              "name": {
+                "value": "MYB"
+              }
+            },
+            {
+              "name": {
+                "value": "MYST"
+              }
+            },
+            {
+              "name": {
+                "value": "MZC"
+              }
+            },
+            {
+              "name": {
+                "value": "NAMO"
+              }
+            },
+            {
+              "name": {
+                "value": "NANO"
+              }
+            },
+            {
+              "name": {
+                "value": "NAS"
+              }
+            },
+            {
+              "name": {
+                "value": "NAV"
+              }
+            },
+            {
+              "name": {
+                "value": "NBT"
+              }
+            },
+            {
+              "name": {
+                "value": "NCASH"
+              }
+            },
+            {
+              "name": {
+                "value": "NDC"
+              }
+            },
+            {
+              "name": {
+                "value": "NEBL"
+              }
+            },
+            {
+              "name": {
+                "value": "NEO"
+              }
+            },
+            {
+              "name": {
+                "value": "NEOS"
+              }
+            },
+            {
+              "name": {
+                "value": "NET"
+              }
+            },
+            {
+              "name": {
+                "value": "NLC2"
+              }
+            },
+            {
+              "name": {
+                "value": "NLG"
+              }
+            },
+            {
+              "name": {
+                "value": "NMC"
+              }
+            },
+            {
+              "name": {
+                "value": "NMR"
+              }
+            },
+            {
+              "name": {
+                "value": "NOBL"
+              }
+            },
+            {
+              "name": {
+                "value": "NOTE"
+              }
+            },
+            {
+              "name": {
+                "value": "NPXS"
+              }
+            },
+            {
+              "name": {
+                "value": "NSR"
+              }
+            },
+            {
+              "name": {
+                "value": "NTO"
+              }
+            },
+            {
+              "name": {
+                "value": "NULS"
+              }
+            },
+            {
+              "name": {
+                "value": "NVC"
+              }
+            },
+            {
+              "name": {
+                "value": "NXC"
+              }
+            },
+            {
+              "name": {
+                "value": "NXS"
+              }
+            },
+            {
+              "name": {
+                "value": "NXT"
+              }
+            },
+            {
+              "name": {
+                "value": "OAX"
+              }
+            },
+            {
+              "name": {
+                "value": "OBITS"
+              }
+            },
+            {
+              "name": {
+                "value": "OCL"
+              }
+            },
+            {
+              "name": {
+                "value": "OCN"
+              }
+            },
+            {
+              "name": {
+                "value": "ODEM"
+              }
+            },
+            {
+              "name": {
+                "value": "ODN"
+              }
+            },
+            {
+              "name": {
+                "value": "OF"
+              }
+            },
+            {
+              "name": {
+                "value": "OK"
+              }
+            },
+            {
+              "name": {
+                "value": "OMG"
+              }
+            },
+            {
+              "name": {
+                "value": "OMNI"
+              }
+            },
+            {
+              "name": {
+                "value": "ONION"
+              }
+            },
+            {
+              "name": {
+                "value": "ONT"
+              }
+            },
+            {
+              "name": {
+                "value": "OPT"
+              }
+            },
+            {
+              "name": {
+                "value": "ORN"
+              }
+            },
+            {
+              "name": {
+                "value": "OST"
+              }
+            },
+            {
+              "name": {
+                "value": "PART"
+              }
+            },
+            {
+              "name": {
+                "value": "PASC"
+              }
+            },
+            {
+              "name": {
+                "value": "PAY"
+              }
+            },
+            {
+              "name": {
+                "value": "PBL"
+              }
+            },
+            {
+              "name": {
+                "value": "PBT"
+              }
+            },
+            {
+              "name": {
+                "value": "PFR"
+              }
+            },
+            {
+              "name": {
+                "value": "PING"
+              }
+            },
+            {
+              "name": {
+                "value": "PINK"
+              }
+            },
+            {
+              "name": {
+                "value": "PIVX"
+              }
+            },
+            {
+              "name": {
+                "value": "PIX"
+              }
+            },
+            {
+              "name": {
+                "value": "PLBT"
+              }
+            },
+            {
+              "name": {
+                "value": "PLR"
+              }
+            },
+            {
+              "name": {
+                "value": "PLU"
+              }
+            },
+            {
+              "name": {
+                "value": "POA"
+              }
+            },
+            {
+              "name": {
+                "value": "POE"
+              }
+            },
+            {
+              "name": {
+                "value": "POLY"
+              }
+            },
+            {
+              "name": {
+                "value": "POSW"
+              }
+            },
+            {
+              "name": {
+                "value": "POT"
+              }
+            },
+            {
+              "name": {
+                "value": "POWR"
+              }
+            },
+            {
+              "name": {
+                "value": "PPC"
+              }
+            },
+            {
+              "name": {
+                "value": "PPT"
+              }
+            },
+            {
+              "name": {
+                "value": "PPY"
+              }
+            },
+            {
+              "name": {
+                "value": "PRG"
+              }
+            },
+            {
+              "name": {
+                "value": "PRL"
+              }
+            },
+            {
+              "name": {
+                "value": "PRO"
+              }
+            },
+            {
+              "name": {
+                "value": "PST"
+              }
+            },
+            {
+              "name": {
+                "value": "PTC"
+              }
+            },
+            {
+              "name": {
+                "value": "PTOY"
+              }
+            },
+            {
+              "name": {
+                "value": "PURA"
+              }
+            },
+            {
+              "name": {
+                "value": "QASH"
+              }
+            },
+            {
+              "name": {
+                "value": "QAU"
+              }
+            },
+            {
+              "name": {
+                "value": "QLC"
+              }
+            },
+            {
+              "name": {
+                "value": "QRK"
+              }
+            },
+            {
+              "name": {
+                "value": "QRL"
+              }
+            },
+            {
+              "name": {
+                "value": "QSP"
+              }
+            },
+            {
+              "name": {
+                "value": "QTL"
+              }
+            },
+            {
+              "name": {
+                "value": "QTUM"
+              }
+            },
+            {
+              "name": {
+                "value": "QUICK"
+              }
+            },
+            {
+              "name": {
+                "value": "QWARK"
+              }
+            },
+            {
+              "name": {
+                "value": "R"
+              }
+            },
+            {
+              "name": {
+                "value": "RADS"
+              }
+            },
+            {
+              "name": {
+                "value": "RAIN"
+              }
+            },
+            {
+              "name": {
+                "value": "RBIES"
+              }
+            },
+            {
+              "name": {
+                "value": "RBX"
+              }
+            },
+            {
+              "name": {
+                "value": "RBY"
+              }
+            },
+            {
+              "name": {
+                "value": "RCN"
+              }
+            },
+            {
+              "name": {
+                "value": "RDD"
+              }
+            },
+            {
+              "name": {
+                "value": "RDN"
+              }
+            },
+            {
+              "name": {
+                "value": "REC"
+              }
+            },
+            {
+              "name": {
+                "value": "RED"
+              }
+            },
+            {
+              "name": {
+                "value": "REP"
+              }
+            },
+            {
+              "name": {
+                "value": "REQ"
+              }
+            },
+            {
+              "name": {
+                "value": "RHOC"
+              }
+            },
+            {
+              "name": {
+                "value": "RIC"
+              }
+            },
+            {
+              "name": {
+                "value": "RISE"
+              }
+            },
+            {
+              "name": {
+                "value": "RLC"
+              }
+            },
+            {
+              "name": {
+                "value": "RLT"
+              }
+            },
+            {
+              "name": {
+                "value": "RPX"
+              }
+            },
+            {
+              "name": {
+                "value": "RRT"
+              }
+            },
+            {
+              "name": {
+                "value": "RUFF"
+              }
+            },
+            {
+              "name": {
+                "value": "RUNE"
+              }
+            },
+            {
+              "name": {
+                "value": "RUP"
+              }
+            },
+            {
+              "name": {
+                "value": "RVT"
+              }
+            },
+            {
+              "name": {
+                "value": "SAFEX"
+              }
+            },
+            {
+              "name": {
+                "value": "SALT"
+              }
+            },
+            {
+              "name": {
+                "value": "SAN"
+              }
+            },
+            {
+              "name": {
+                "value": "SBD"
+              }
+            },
+            {
+              "name": {
+                "value": "SBTC"
+              }
+            },
+            {
+              "name": {
+                "value": "SC"
+              }
+            },
+            {
+              "name": {
+                "value": "SEELE"
+              }
+            },
+            {
+              "name": {
+                "value": "SEQ"
+              }
+            },
+            {
+              "name": {
+                "value": "SHIB"
+              }
+            },
+            {
+              "name": {
+                "value": "SHIFT"
+              }
+            },
+            {
+              "name": {
+                "value": "SIB"
+              }
+            },
+            {
+              "name": {
+                "value": "SIGMA"
+              }
+            },
+            {
+              "name": {
+                "value": "SIGT"
+              }
+            },
+            {
+              "name": {
+                "value": "SJCX"
+              }
+            },
+            {
+              "name": {
+                "value": "SKIN"
+              }
+            },
+            {
+              "name": {
+                "value": "SKY"
+              }
+            },
+            {
+              "name": {
+                "value": "SLR"
+              }
+            },
+            {
+              "name": {
+                "value": "SLS"
+              }
+            },
+            {
+              "name": {
+                "value": "SMART"
+              }
+            },
+            {
+              "name": {
+                "value": "SMT"
+              }
+            },
+            {
+              "name": {
+                "value": "SNC"
+              }
+            },
+            {
+              "name": {
+                "value": "SNGLS"
+              }
+            },
+            {
+              "name": {
+                "value": "SNM"
+              }
+            },
+            {
+              "name": {
+                "value": "SNRG"
+              }
+            },
+            {
+              "name": {
+                "value": "SNT"
+              }
+            },
+            {
+              "name": {
+                "value": "SOC"
+              }
+            },
+            {
+              "name": {
+                "value": "SOL"
+              }
+            },
+            {
+              "name": {
+                "value": "SOUL"
+              }
+            },
+            {
+              "name": {
+                "value": "SPANK"
+              }
+            },
+            {
+              "name": {
+                "value": "SPC"
+              }
+            },
+            {
+              "name": {
+                "value": "SPHR"
+              }
+            },
+            {
+              "name": {
+                "value": "SPR"
+              }
+            },
+            {
+              "name": {
+                "value": "SNX"
+              }
+            },
+            {
+              "name": {
+                "value": "SRN"
+              }
+            },
+            {
+              "name": {
+                "value": "START"
+              }
+            },
+            {
+              "name": {
+                "value": "STEEM"
+              }
+            },
+            {
+              "name": {
+                "value": "STK"
+              }
+            },
+            {
+              "name": {
+                "value": "STORJ"
+              }
+            },
+            {
+              "name": {
+                "value": "STORM"
+              }
+            },
+            {
+              "name": {
+                "value": "STQ"
+              }
+            },
+            {
+              "name": {
+                "value": "STRAT"
+              }
+            },
+            {
+              "name": {
+                "value": "STX"
+              }
+            },
+            {
+              "name": {
+                "value": "SUB"
+              }
+            },
+            {
+              "name": {
+                "value": "SWFTC"
+              }
+            },
+            {
+              "name": {
+                "value": "SWIFT"
+              }
+            },
+            {
+              "name": {
+                "value": "SWT"
+              }
+            },
+            {
+              "name": {
+                "value": "SYNX"
+              }
+            },
+            {
+              "name": {
+                "value": "SYS"
+              }
+            },
+            {
+              "name": {
+                "value": "TAAS"
+              }
+            },
+            {
+              "name": {
+                "value": "TAU"
+              }
+            },
+            {
+              "name": {
+                "value": "TCC"
+              }
+            },
+            {
+              "name": {
+                "value": "TFL"
+              }
+            },
+            {
+              "name": {
+                "value": "THC"
+              }
+            },
+            {
+              "name": {
+                "value": "THETA"
+              }
+            },
+            {
+              "name": {
+                "value": "TIME"
+              }
+            },
+            {
+              "name": {
+                "value": "TIX"
+              }
+            },
+            {
+              "name": {
+                "value": "TKN"
+              }
+            },
+            {
+              "name": {
+                "value": "TKR"
+              }
+            },
+            {
+              "name": {
+                "value": "TKS"
+              }
+            },
+            {
+              "name": {
+                "value": "TNB"
+              }
+            },
+            {
+              "name": {
+                "value": "TNT"
+              }
+            },
+            {
+              "name": {
+                "value": "TOA"
+              }
+            },
+            {
+              "name": {
+                "value": "TRAC"
+              }
+            },
+            {
+              "name": {
+                "value": "TRC"
+              }
+            },
+            {
+              "name": {
+                "value": "TRCT"
+              }
+            },
+            {
+              "name": {
+                "value": "TRIBE"
+              }
+            },
+            {
+              "name": {
+                "value": "TRIG"
+              }
+            },
+            {
+              "name": {
+                "value": "TRST"
+              }
+            },
+            {
+              "name": {
+                "value": "TRUE"
+              }
+            },
+            {
+              "name": {
+                "value": "TRUST"
+              }
+            },
+            {
+              "name": {
+                "value": "TRX"
+              }
+            },
+            {
+              "name": {
+                "value": "TUSD"
+              }
+            },
+            {
+              "name": {
+                "value": "TX"
+              }
+            },
+            {
+              "name": {
+                "value": "UBQ"
+              }
+            },
+            {
+              "name": {
+                "value": "UKG"
+              }
+            },
+            {
+              "name": {
+                "value": "ULA"
+              }
+            },
+            {
+              "name": {
+                "value": "UNB"
+              }
+            },
+            {
+              "name": {
+                "value": "UNI"
+              }
+            },
+            {
+              "name": {
+                "value": "UNITY"
+              }
+            },
+            {
+              "name": {
+                "value": "UNO"
+              }
+            },
+            {
+              "name": {
+                "value": "UNY"
+              }
+            },
+            {
+              "name": {
+                "value": "UP"
+              }
+            },
+            {
+              "name": {
+                "value": "URO"
+              }
+            },
+            {
+              "name": {
+                "value": "USDT"
+              }
+            },
+            {
+              "name": {
+                "value": "UST"
+              }
+            },
+            {
+              "name": {
+                "value": "UTK"
+              }
+            },
+            {
+              "name": {
+                "value": "VEE"
+              }
+            },
+            {
+              "name": {
+                "value": "VEN"
+              }
+            },
+            {
+              "name": {
+                "value": "VERI"
+              }
+            },
+            {
+              "name": {
+                "value": "VET"
+              }
+            },
+            {
+              "name": {
+                "value": "VIA"
+              }
+            },
+            {
+              "name": {
+                "value": "VIB"
+              }
+            },
+            {
+              "name": {
+                "value": "VIBE"
+              }
+            },
+            {
+              "name": {
+                "value": "VIVO"
+              }
+            },
+            {
+              "name": {
+                "value": "VOISE"
+              }
+            },
+            {
+              "name": {
+                "value": "VOX"
+              }
+            },
+            {
+              "name": {
+                "value": "VPN"
+              }
+            },
+            {
+              "name": {
+                "value": "VRC"
+              }
+            },
+            {
+              "name": {
+                "value": "VRM"
+              }
+            },
+            {
+              "name": {
+                "value": "VRS"
+              }
+            },
+            {
+              "name": {
+                "value": "VSL"
+              }
+            },
+            {
+              "name": {
+                "value": "VTC"
+              }
+            },
+            {
+              "name": {
+                "value": "VTR"
+              }
+            },
+            {
+              "name": {
+                "value": "WABI"
+              }
+            },
+            {
+              "name": {
+                "value": "WAN"
+              }
+            },
+            {
+              "name": {
+                "value": "WAVES"
+              }
+            },
+            {
+              "name": {
+                "value": "WAX"
+              }
+            },
+            {
+              "name": {
+                "value": "WBTC"
+              }
+            },
+            {
+              "name": {
+                "value": "WCT"
+              }
+            },
+            {
+              "name": {
+                "value": "WDC"
+              }
+            },
+            {
+              "name": {
+                "value": "WGO"
+              }
+            },
+            {
+              "name": {
+                "value": "WGR"
+              }
+            },
+            {
+              "name": {
+                "value": "WINGS"
+              }
+            },
+            {
+              "name": {
+                "value": "WPR"
+              }
+            },
+            {
+              "name": {
+                "value": "WTC"
+              }
+            },
+            {
+              "name": {
+                "value": "WTT"
+              }
+            },
+            {
+              "name": {
+                "value": "XAS"
+              }
+            },
+            {
+              "name": {
+                "value": "XAUR"
+              }
+            },
+            {
+              "name": {
+                "value": "XBC"
+              }
+            },
+            {
+              "name": {
+                "value": "XBY"
+              }
+            },
+            {
+              "name": {
+                "value": "XCN"
+              }
+            },
+            {
+              "name": {
+                "value": "XCP"
+              }
+            },
+            {
+              "name": {
+                "value": "XDN"
+              }
+            },
+            {
+              "name": {
+                "value": "XEL"
+              }
+            },
+            {
+              "name": {
+                "value": "XEM"
+              }
+            },
+            {
+              "name": {
+                "value": "NEM"
+              }
+            },
+            {
+              "name": {
+                "value": "XHV"
+              }
+            },
+            {
+              "name": {
+                "value": "XID"
+              }
+            },
+            {
+              "name": {
+                "value": "XLM"
+              }
+            },
+            {
+              "name": {
+                "value": "XMG"
+              }
+            },
+            {
+              "name": {
+                "value": "XMR"
+              }
+            },
+            {
+              "name": {
+                "value": "XMT"
+              }
+            },
+            {
+              "name": {
+                "value": "XMY"
+              }
+            },
+            {
+              "name": {
+                "value": "XPM"
+              }
+            },
+            {
+              "name": {
+                "value": "XRL"
+              }
+            },
+            {
+              "name": {
+                "value": "XRP"
+              }
+            },
+            {
+              "name": {
+                "value": "XSPEC"
+              }
+            },
+            {
+              "name": {
+                "value": "XST"
+              }
+            },
+            {
+              "name": {
+                "value": "XTZ"
+              }
+            },
+            {
+              "name": {
+                "value": "XUC"
+              }
+            },
+            {
+              "name": {
+                "value": "XVC"
+              }
+            },
+            {
+              "name": {
+                "value": "XVG"
+              }
+            },
+            {
+              "name": {
+                "value": "XWC"
+              }
+            },
+            {
+              "name": {
+                "value": "XZC"
+              }
+            },
+            {
+              "name": {
+                "value": "XZR"
+              }
+            },
+            {
+              "name": {
+                "value": "YEE"
+              }
+            },
+            {
+              "name": {
+                "value": "YOYOW"
+              }
+            },
+            {
+              "name": {
+                "value": "ZCC"
+              }
+            },
+            {
+              "name": {
+                "value": "ZCL"
+              }
+            },
+            {
+              "name": {
+                "value": "ZCO"
+              }
+            },
+            {
+              "name": {
+                "value": "ZEC"
+              }
+            },
+            {
+              "name": {
+                "value": "ZEN"
+              }
+            },
+            {
+              "name": {
+                "value": "ZET"
+              }
+            },
+            {
+              "name": {
+                "value": "ZIL"
+              }
+            },
+            {
+              "name": {
+                "value": "ZLA"
+              }
+            },
+            {
+              "name": {
+                "value": "ZRX"
+              }
+            },
+            {
+              "name": {
+                "value": "FirstBlood"
+              }
+            },
+            {
+              "name": {
+                "value": "GiveCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "808Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Aave"
+              }
+            },
+            {
+              "name": {
+                "value": "ArcBlock"
+              }
+            },
+            {
+              "name": {
+                "value": "ArtByte"
+              }
+            },
+            {
+              "name": {
+                "value": "AsiaCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Achain"
+              }
+            },
+            {
+              "name": {
+                "value": "Cardano"
+              }
+            },
+            {
+              "name": {
+                "value": "adToken"
+              }
+            },
+            {
+              "name": {
+                "value": "AdEx"
+              }
+            },
+            {
+              "name": {
+                "value": "Aeternity"
+              }
+            },
+            {
+              "name": {
+                "value": "Aeon"
+              }
+            },
+            {
+              "name": {
+                "value": "SingularityNET"
+              }
+            },
+            {
+              "name": {
+                "value": "IDNI-Agoras"
+              }
+            },
+            {
+              "name": {
+                "value": "POLY-AI"
+              }
+            },
+            {
+              "name": {
+                "value": "AidCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Aion"
+              }
+            },
+            {
+              "name": {
+                "value": "AirToken"
+              }
+            },
+            {
+              "name": {
+                "value": "Akuya-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Algorand"
+              }
+            },
+            {
+              "name": {
+                "value": "ALIS"
+              }
+            },
+            {
+              "name": {
+                "value": "AmberCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Synereo"
+              }
+            },
+            {
+              "name": {
+                "value": "Ampleforth"
+              }
+            },
+            {
+              "name": {
+                "value": "Anoncoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Aragon"
+              }
+            },
+            {
+              "name": {
+                "value": "AppCoins"
+              }
+            },
+            {
+              "name": {
+                "value": "APX-Ventures"
+              }
+            },
+            {
+              "name": {
+                "value": "Ardor"
+              }
+            },
+            {
+              "name": {
+                "value": "Ark"
+              }
+            },
+            {
+              "name": {
+                "value": "Aeron"
+              }
+            },
+            {
+              "name": {
+                "value": "AirSwap"
+              }
+            },
+            {
+              "name": {
+                "value": "ATBCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "ATMChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Cosmos"
+              }
+            },
+            {
+              "name": {
+                "value": "Authorship"
+              }
+            },
+            {
+              "name": {
+                "value": "Auroracoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Avalanche"
+              }
+            },
+            {
+              "name": {
+                "value": "Aventus"
+              }
+            },
+            {
+              "name": {
+                "value": "B3Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Band Protocol"
+              }
+            },
+            {
+              "name": {
+                "value": "Basic-Attention-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "BitBay"
+              }
+            },
+            {
+              "name": {
+                "value": "Boolberry"
+              }
+            },
+            {
+              "name": {
+                "value": "BCAP"
+              }
+            },
+            {
+              "name": {
+                "value": "BitConnect"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin-Diamond"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin-Cash"
+              }
+            },
+            {
+              "name": {
+                "value": "Bytecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "BlockMason-Credit-Protocol-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "BitcoinX"
+              }
+            },
+            {
+              "name": {
+                "value": "BitCrystals"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitdeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Bee-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "BelaCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "DAO-Casino"
+              }
+            },
+            {
+              "name": {
+                "value": "BF-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Bismuth"
+              }
+            },
+            {
+              "name": {
+                "value": "BitBean"
+              }
+            },
+            {
+              "name": {
+                "value": "BitBTC"
+              }
+            },
+            {
+              "name": {
+                "value": "BitCNY"
+              }
+            },
+            {
+              "name": {
+                "value": "BitEUR"
+              }
+            },
+            {
+              "name": {
+                "value": "BitGOLD"
+              }
+            },
+            {
+              "name": {
+                "value": "BitSILVER"
+              }
+            },
+            {
+              "name": {
+                "value": "BitUSD"
+              }
+            },
+            {
+              "name": {
+                "value": "Bibox-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Blitzcash"
+              }
+            },
+            {
+              "name": {
+                "value": "Blackcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Bolenum"
+              }
+            },
+            {
+              "name": {
+                "value": "Blocknet"
+              }
+            },
+            {
+              "name": {
+                "value": "Bluzelle"
+              }
+            },
+            {
+              "name": {
+                "value": "Blackmoon-Crypto"
+              }
+            },
+            {
+              "name": {
+                "value": "Binance-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Bancor-Network-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Bounty0x"
+              }
+            },
+            {
+              "name": {
+                "value": "BoostCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Bodhi"
+              }
+            },
+            {
+              "name": {
+                "value": "bitqy"
+              }
+            },
+            {
+              "name": {
+                "value": "Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "Breakout-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Breakout-Stake"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin SV"
+              }
+            },
+            {
+              "name": {
+                "value": "Bata"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin BEP2"
+              }
+            },
+            {
+              "name": {
+                "value": "BitcoinDark"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin-Private"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin-Gold"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitmark"
+              }
+            },
+            {
+              "name": {
+                "value": "BitShares"
+              }
+            },
+            {
+              "name": {
+                "value": "BTSR"
+              }
+            },
+            {
+              "name": {
+                "value": "BitTorrent"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcore"
+              }
+            },
+            {
+              "name": {
+                "value": "Burstcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Binance-USD"
+              }
+            },
+            {
+              "name": {
+                "value": "BuzzCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Bytecent"
+              }
+            },
+            {
+              "name": {
+                "value": "Bytom"
+              }
+            },
+            {
+              "name": {
+                "value": "Crypto20"
+              }
+            },
+            {
+              "name": {
+                "value": "PancakeSwap"
+              }
+            },
+            {
+              "name": {
+                "value": "CannabisCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "BlockCAT"
+              }
+            },
+            {
+              "name": {
+                "value": "CryptoCarbon"
+              }
+            },
+            {
+              "name": {
+                "value": "Blox"
+              }
+            },
+            {
+              "name": {
+                "value": "Cofound-it"
+              }
+            },
+            {
+              "name": {
+                "value": "ChatCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Chips"
+              }
+            },
+            {
+              "name": {
+                "value": "Clams"
+              }
+            },
+            {
+              "name": {
+                "value": "CloakCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Compcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "CyberMiles"
+              }
+            },
+            {
+              "name": {
+                "value": "Cindicator"
+              }
+            },
+            {
+              "name": {
+                "value": "Cryptonex"
+              }
+            },
+            {
+              "name": {
+                "value": "CoinFi"
+              }
+            },
+            {
+              "name": {
+                "value": "Compound"
+              }
+            },
+            {
+              "name": {
+                "value": "COSS"
+              }
+            },
+            {
+              "name": {
+                "value": "Circuits-Of-Value"
+              }
+            },
+            {
+              "name": {
+                "value": "CreditBIT"
+              }
+            },
+            {
+              "name": {
+                "value": "CreativeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Credo"
+              }
+            },
+            {
+              "name": {
+                "value": "Crypto.com Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Crown"
+              }
+            },
+            {
+              "name": {
+                "value": "BitDice"
+              }
+            },
+            {
+              "name": {
+                "value": "Centra"
+              }
+            },
+            {
+              "name": {
+                "value": "Cortex"
+              }
+            },
+            {
+              "name": {
+                "value": "CureCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Civic"
+              }
+            },
+            {
+              "name": {
+                "value": "Dai"
+              }
+            },
+            {
+              "name": {
+                "value": "Darcrus"
+              }
+            },
+            {
+              "name": {
+                "value": "Dash"
+              }
+            },
+            {
+              "name": {
+                "value": "DATAcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Chronologic"
+              }
+            },
+            {
+              "name": {
+                "value": "DeepBrain-Chain"
+              }
+            },
+            {
+              "name": {
+                "value": "DubaiCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Dentacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Decred"
+              }
+            },
+            {
+              "name": {
+                "value": "DECENT"
+              }
+            },
+            {
+              "name": {
+                "value": "Digital-Developers-Fund"
+              }
+            },
+            {
+              "name": {
+                "value": "Dent"
+              }
+            },
+            {
+              "name": {
+                "value": "DFSCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "DigiByte"
+              }
+            },
+            {
+              "name": {
+                "value": "Digitalcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "DigixDAO"
+              }
+            },
+            {
+              "name": {
+                "value": "Etheroll"
+              }
+            },
+            {
+              "name": {
+                "value": "Agrello-Delta"
+              }
+            },
+            {
+              "name": {
+                "value": "Diamond"
+              }
+            },
+            {
+              "name": {
+                "value": "DMarket"
+              }
+            },
+            {
+              "name": {
+                "value": "district0x"
+              }
+            },
+            {
+              "name": {
+                "value": "DogeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "DopeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Polkadot"
+              }
+            },
+            {
+              "name": {
+                "value": "Dragonchain"
+              }
+            },
+            {
+              "name": {
+                "value": "Data"
+              }
+            },
+            {
+              "name": {
+                "value": "Databits"
+              }
+            },
+            {
+              "name": {
+                "value": "Dynamic"
+              }
+            },
+            {
+              "name": {
+                "value": "EarthCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "eBoost"
+              }
+            },
+            {
+              "name": {
+                "value": "eBTC"
+              }
+            },
+            {
+              "name": {
+                "value": "ECC"
+              }
+            },
+            {
+              "name": {
+                "value": "E-coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Edgeless"
+              }
+            },
+            {
+              "name": {
+                "value": "Eidoo"
+              }
+            },
+            {
+              "name": {
+                "value": "Electronic-Gulden"
+              }
+            },
+            {
+              "name": {
+                "value": "EverGreenCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Elrond"
+              }
+            },
+            {
+              "name": {
+                "value": "EDUCare"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastos"
+              }
+            },
+            {
+              "name": {
+                "value": "Electrify.Asia"
+              }
+            },
+            {
+              "name": {
+                "value": "aelf"
+              }
+            },
+            {
+              "name": {
+                "value": "Elixir"
+              }
+            },
+            {
+              "name": {
+                "value": "Embercoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Emercoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Einsteinium"
+              }
+            },
+            {
+              "name": {
+                "value": "Enigma"
+              }
+            },
+            {
+              "name": {
+                "value": "Enjin-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "EnergyCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "EOS"
+              }
+            },
+            {
+              "name": {
+                "value": "EOT-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "EquiTrader"
+              }
+            },
+            {
+              "name": {
+                "value": "EuropeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Ethereum-Classic"
+              }
+            },
+            {
+              "name": {
+                "value": "Ethereum"
+              }
+            },
+            {
+              "name": {
+                "value": "Ethereum-Dark"
+              }
+            },
+            {
+              "name": {
+                "value": "Ethos"
+              }
+            },
+            {
+              "name": {
+                "value": "Electroneum"
+              }
+            },
+            {
+              "name": {
+                "value": "Metaverse-Entropy"
+              }
+            },
+            {
+              "name": {
+                "value": "EncryptoTel"
+              }
+            },
+            {
+              "name": {
+                "value": "Devery"
+              }
+            },
+            {
+              "name": {
+                "value": "Everex"
+              }
+            },
+            {
+              "name": {
+                "value": "ExclusiveCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Expanse"
+              }
+            },
+            {
+              "name": {
+                "value": "Factom"
+              }
+            },
+            {
+              "name": {
+                "value": "Filecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "FoldingCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "FlorinCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "FlutterCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "FirstCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Feathercoin"
+              }
+            },
+            {
+              "name": {
+                "value": "FTX Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Etherparty"
+              }
+            },
+            {
+              "name": {
+                "value": "FunFair"
+              }
+            },
+            {
+              "name": {
+                "value": "Gambit"
+              }
+            },
+            {
+              "name": {
+                "value": "GameCredits"
+              }
+            },
+            {
+              "name": {
+                "value": "Gas"
+              }
+            },
+            {
+              "name": {
+                "value": "Golos Gold"
+              }
+            },
+            {
+              "name": {
+                "value": "GoByte"
+              }
+            },
+            {
+              "name": {
+                "value": "Byteball"
+              }
+            },
+            {
+              "name": {
+                "value": "GCRCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "GeoCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "GoldCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Gnosis-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Golem-Tokens"
+              }
+            },
+            {
+              "name": {
+                "value": "Golos"
+              }
+            },
+            {
+              "name": {
+                "value": "Gridcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Graph"
+              }
+            },
+            {
+              "name": {
+                "value": "Groestlcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Growers-International"
+              }
+            },
+            {
+              "name": {
+                "value": "Game"
+              }
+            },
+            {
+              "name": {
+                "value": "Gifto"
+              }
+            },
+            {
+              "name": {
+                "value": "Guppy"
+              }
+            },
+            {
+              "name": {
+                "value": "Genesis-Vision"
+              }
+            },
+            {
+              "name": {
+                "value": "GXShares"
+              }
+            },
+            {
+              "name": {
+                "value": "Hedera"
+              }
+            },
+            {
+              "name": {
+                "value": "HoboNickels"
+              }
+            },
+            {
+              "name": {
+                "value": "HEAT"
+              }
+            },
+            {
+              "name": {
+                "value": "Humaniq"
+              }
+            },
+            {
+              "name": {
+                "value": "High-Performance-Blockchain"
+              }
+            },
+            {
+              "name": {
+                "value": "Hshare"
+              }
+            },
+            {
+              "name": {
+                "value": "Huobi Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Hush"
+              }
+            },
+            {
+              "name": {
+                "value": "Hive"
+              }
+            },
+            {
+              "name": {
+                "value": "HexxCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "ICONOMI"
+              }
+            },
+            {
+              "name": {
+                "value": "ICON"
+              }
+            },
+            {
+              "name": {
+                "value": "Infinitecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "investFeed"
+              }
+            },
+            {
+              "name": {
+                "value": "Ignis"
+              }
+            },
+            {
+              "name": {
+                "value": "Incent"
+              }
+            },
+            {
+              "name": {
+                "value": "Indorse-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "InfChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Ink"
+              }
+            },
+            {
+              "name": {
+                "value": "INS-Ecosystem"
+              }
+            },
+            {
+              "name": {
+                "value": "Insights-Network"
+              }
+            },
+            {
+              "name": {
+                "value": "Internet-Node-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Internxt"
+              }
+            },
+            {
+              "name": {
+                "value": "IOCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "ION"
+              }
+            },
+            {
+              "name": {
+                "value": "Internet-of-People"
+              }
+            },
+            {
+              "name": {
+                "value": "IOStoken"
+              }
+            },
+            {
+              "name": {
+                "value": "IOTA"
+              }
+            },
+            {
+              "name": {
+                "value": "IoTeX"
+              }
+            },
+            {
+              "name": {
+                "value": "Iquant-Chain"
+              }
+            },
+            {
+              "name": {
+                "value": "IoT-Chain"
+              }
+            },
+            {
+              "name": {
+                "value": "iXcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "InsureX"
+              }
+            },
+            {
+              "name": {
+                "value": "JET8"
+              }
+            },
+            {
+              "name": {
+                "value": "Jibrel-Network"
+              }
+            },
+            {
+              "name": {
+                "value": "KuCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "KickCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "KIN"
+              }
+            },
+            {
+              "name": {
+                "value": "Klaytn"
+              }
+            },
+            {
+              "name": {
+                "value": "Komodo"
+              }
+            },
+            {
+              "name": {
+                "value": "Kyber-Network"
+              }
+            },
+            {
+              "name": {
+                "value": "KoreCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Kusama"
+              }
+            },
+            {
+              "name": {
+                "value": "LBRY-Credits"
+              }
+            },
+            {
+              "name": {
+                "value": "Litecoin-Cash"
+              }
+            },
+            {
+              "name": {
+                "value": "EthLend"
+              }
+            },
+            {
+              "name": {
+                "value": "UNUS SED LEO"
+              }
+            },
+            {
+              "name": {
+                "value": "Leverj"
+              }
+            },
+            {
+              "name": {
+                "value": "Legends-Room"
+              }
+            },
+            {
+              "name": {
+                "value": "Linda"
+              }
+            },
+            {
+              "name": {
+                "value": "ChainLink"
+              }
+            },
+            {
+              "name": {
+                "value": "Lykke"
+              }
+            },
+            {
+              "name": {
+                "value": "LoMoCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "LOCIcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Loom-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Loopring"
+              }
+            },
+            {
+              "name": {
+                "value": "Lisk"
+              }
+            },
+            {
+              "name": {
+                "value": "Litecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Lunyr"
+              }
+            },
+            {
+              "name": {
+                "value": "Terra"
+              }
+            },
+            {
+              "name": {
+                "value": "MaidSafeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Decentraland"
+              }
+            },
+            {
+              "name": {
+                "value": "Polygon"
+              }
+            },
+            {
+              "name": {
+                "value": "Maxcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Embers"
+              }
+            },
+            {
+              "name": {
+                "value": "MCAP"
+              }
+            },
+            {
+              "name": {
+                "value": "Monaco"
+              }
+            },
+            {
+              "name": {
+                "value": "Moeda-Loyalty-Points"
+              }
+            },
+            {
+              "name": {
+                "value": "Megacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "MediBlock"
+              }
+            },
+            {
+              "name": {
+                "value": "Memetic"
+              }
+            },
+            {
+              "name": {
+                "value": "Mercury"
+              }
+            },
+            {
+              "name": {
+                "value": "MergeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "MobileGo"
+              }
+            },
+            {
+              "name": {
+                "value": "Minex"
+              }
+            },
+            {
+              "name": {
+                "value": "Mintcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "IOTA"
+              }
+            },
+            {
+              "name": {
+                "value": "Mithril"
+              }
+            },
+            {
+              "name": {
+                "value": "Maker"
+              }
+            },
+            {
+              "name": {
+                "value": "Melon"
+              }
+            },
+            {
+              "name": {
+                "value": "Minereum"
+              }
+            },
+            {
+              "name": {
+                "value": "MinexCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Modum"
+              }
+            },
+            {
+              "name": {
+                "value": "MonaCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Miners-Reward-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Mothership"
+              }
+            },
+            {
+              "name": {
+                "value": "Monetha"
+              }
+            },
+            {
+              "name": {
+                "value": "MedToken"
+              }
+            },
+            {
+              "name": {
+                "value": "MonetaryUnit"
+              }
+            },
+            {
+              "name": {
+                "value": "Musicoin"
+              }
+            },
+            {
+              "name": {
+                "value": "MyBit-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Mysterium"
+              }
+            },
+            {
+              "name": {
+                "value": "Mazacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Namocoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Nano"
+              }
+            },
+            {
+              "name": {
+                "value": "Nebulas-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Nav-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "NuBits"
+              }
+            },
+            {
+              "name": {
+                "value": "Nucleus-Vision"
+              }
+            },
+            {
+              "name": {
+                "value": "NeverDie-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Neblio"
+              }
+            },
+            {
+              "name": {
+                "value": "NEO"
+              }
+            },
+            {
+              "name": {
+                "value": "NeosCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Nimiq"
+              }
+            },
+            {
+              "name": {
+                "value": "NoLimitCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Gulden"
+              }
+            },
+            {
+              "name": {
+                "value": "Namecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Numeraire"
+              }
+            },
+            {
+              "name": {
+                "value": "NobleCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "DNotes"
+              }
+            },
+            {
+              "name": {
+                "value": "Pundi-X-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "NuShares"
+              }
+            },
+            {
+              "name": {
+                "value": "Fujinto"
+              }
+            },
+            {
+              "name": {
+                "value": "Nuls"
+              }
+            },
+            {
+              "name": {
+                "value": "Novacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Nexium"
+              }
+            },
+            {
+              "name": {
+                "value": "Nexus"
+              }
+            },
+            {
+              "name": {
+                "value": "Nxt"
+              }
+            },
+            {
+              "name": {
+                "value": "openANX"
+              }
+            },
+            {
+              "name": {
+                "value": "Obits"
+              }
+            },
+            {
+              "name": {
+                "value": "Oceanlab"
+              }
+            },
+            {
+              "name": {
+                "value": "Odyssey"
+              }
+            },
+            {
+              "name": {
+                "value": "ODEM"
+              }
+            },
+            {
+              "name": {
+                "value": "Obsidian"
+              }
+            },
+            {
+              "name": {
+                "value": "OFCOIN"
+              }
+            },
+            {
+              "name": {
+                "value": "OKCash"
+              }
+            },
+            {
+              "name": {
+                "value": "OmiseGo"
+              }
+            },
+            {
+              "name": {
+                "value": "Omni"
+              }
+            },
+            {
+              "name": {
+                "value": "DeepOnion"
+              }
+            },
+            {
+              "name": {
+                "value": "Ontology"
+              }
+            },
+            {
+              "name": {
+                "value": "Opus"
+              }
+            },
+            {
+              "name": {
+                "value": "Orion-Protocol"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Particl"
+              }
+            },
+            {
+              "name": {
+                "value": "PascalCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "TenX"
+              }
+            },
+            {
+              "name": {
+                "value": "Pebbles"
+              }
+            },
+            {
+              "name": {
+                "value": "Primalbase-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Payfair"
+              }
+            },
+            {
+              "name": {
+                "value": "CryptoPing"
+              }
+            },
+            {
+              "name": {
+                "value": "Pinkcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "PIVX"
+              }
+            },
+            {
+              "name": {
+                "value": "Lampix"
+              }
+            },
+            {
+              "name": {
+                "value": "Polybius"
+              }
+            },
+            {
+              "name": {
+                "value": "Pillar"
+              }
+            },
+            {
+              "name": {
+                "value": "Pluton"
+              }
+            },
+            {
+              "name": {
+                "value": "POA-Network"
+              }
+            },
+            {
+              "name": {
+                "value": "Poet"
+              }
+            },
+            {
+              "name": {
+                "value": "Polymath"
+              }
+            },
+            {
+              "name": {
+                "value": "PoSW-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "PotCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Power-Ledger"
+              }
+            },
+            {
+              "name": {
+                "value": "Peercoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Populous"
+              }
+            },
+            {
+              "name": {
+                "value": "Peerplays"
+              }
+            },
+            {
+              "name": {
+                "value": "Paragon-Coin"
+              }
+            },
+            {
+              "name": {
+                "value": "Oyster-Pearl"
+              }
+            },
+            {
+              "name": {
+                "value": "Propy"
+              }
+            },
+            {
+              "name": {
+                "value": "Primas"
+              }
+            },
+            {
+              "name": {
+                "value": "Pesetacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Patientory"
+              }
+            },
+            {
+              "name": {
+                "value": "Pura"
+              }
+            },
+            {
+              "name": {
+                "value": "QASH"
+              }
+            },
+            {
+              "name": {
+                "value": "Quantum"
+              }
+            },
+            {
+              "name": {
+                "value": "Qlink"
+              }
+            },
+            {
+              "name": {
+                "value": "Quark"
+              }
+            },
+            {
+              "name": {
+                "value": "Quantum-Resistant-Ledger"
+              }
+            },
+            {
+              "name": {
+                "value": "Quantstamp"
+              }
+            },
+            {
+              "name": {
+                "value": "Quatloo"
+              }
+            },
+            {
+              "name": {
+                "value": "Qtum"
+              }
+            },
+            {
+              "name": {
+                "value": "Quickswap"
+              }
+            },
+            {
+              "name": {
+                "value": "Qwark"
+              }
+            },
+            {
+              "name": {
+                "value": "Revain"
+              }
+            },
+            {
+              "name": {
+                "value": "Radium"
+              }
+            },
+            {
+              "name": {
+                "value": "Condensate"
+              }
+            },
+            {
+              "name": {
+                "value": "Rubies"
+              }
+            },
+            {
+              "name": {
+                "value": "Ripto-Bux"
+              }
+            },
+            {
+              "name": {
+                "value": "RubyCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Ripio-Credit-Network"
+              }
+            },
+            {
+              "name": {
+                "value": "ReddCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Raiden-Network-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Regalcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Redcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Augur"
+              }
+            },
+            {
+              "name": {
+                "value": "Request-Network"
+              }
+            },
+            {
+              "name": {
+                "value": "RChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Riecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Rise"
+              }
+            },
+            {
+              "name": {
+                "value": "RLC-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "RouletteToken"
+              }
+            },
+            {
+              "name": {
+                "value": "Red-Pulse"
+              }
+            },
+            {
+              "name": {
+                "value": "Recovery-Right-Tokens"
+              }
+            },
+            {
+              "name": {
+                "value": "Ruff"
+              }
+            },
+            {
+              "name": {
+                "value": "THORChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Rupee"
+              }
+            },
+            {
+              "name": {
+                "value": "Rivetz"
+              }
+            },
+            {
+              "name": {
+                "value": "SafeExchangeCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Salt"
+              }
+            },
+            {
+              "name": {
+                "value": "Santiment-Network-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Steem-Dollars"
+              }
+            },
+            {
+              "name": {
+                "value": "Super-Bitcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Siacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Seele"
+              }
+            },
+            {
+              "name": {
+                "value": "Sequence"
+              }
+            },
+            {
+              "name": {
+                "value": "SHIBA-INU"
+              }
+            },
+            {
+              "name": {
+                "value": "SHIFT"
+              }
+            },
+            {
+              "name": {
+                "value": "SIBCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "SIGMAcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Signatum"
+              }
+            },
+            {
+              "name": {
+                "value": "Storjcoin-X"
+              }
+            },
+            {
+              "name": {
+                "value": "SkinCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Skycoin"
+              }
+            },
+            {
+              "name": {
+                "value": "SolarCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "SaluS"
+              }
+            },
+            {
+              "name": {
+                "value": "SmartCash"
+              }
+            },
+            {
+              "name": {
+                "value": "SmartMesh"
+              }
+            },
+            {
+              "name": {
+                "value": "SunContract"
+              }
+            },
+            {
+              "name": {
+                "value": "SingularDTV"
+              }
+            },
+            {
+              "name": {
+                "value": "SONM"
+              }
+            },
+            {
+              "name": {
+                "value": "Synergy"
+              }
+            },
+            {
+              "name": {
+                "value": "Status-Network-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "All-Sports"
+              }
+            },
+            {
+              "name": {
+                "value": "Solana"
+              }
+            },
+            {
+              "name": {
+                "value": "Phantasma"
+              }
+            },
+            {
+              "name": {
+                "value": "SpankChain"
+              }
+            },
+            {
+              "name": {
+                "value": "SpaceChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Sphere"
+              }
+            },
+            {
+              "name": {
+                "value": "SpreadCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Synthetix-Network-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Sirin-Labs-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Startcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Steem"
+              }
+            },
+            {
+              "name": {
+                "value": "STK-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Storj"
+              }
+            },
+            {
+              "name": {
+                "value": "Storm"
+              }
+            },
+            {
+              "name": {
+                "value": "Storiqa"
+              }
+            },
+            {
+              "name": {
+                "value": "Stratis"
+              }
+            },
+            {
+              "name": {
+                "value": "Stox"
+              }
+            },
+            {
+              "name": {
+                "value": "Substratum"
+              }
+            },
+            {
+              "name": {
+                "value": "SwftCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitswift"
+              }
+            },
+            {
+              "name": {
+                "value": "Swarm-City"
+              }
+            },
+            {
+              "name": {
+                "value": "Syndicate"
+              }
+            },
+            {
+              "name": {
+                "value": "SysCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Taas"
+              }
+            },
+            {
+              "name": {
+                "value": "Lamden"
+              }
+            },
+            {
+              "name": {
+                "value": "The-ChampCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "True-Flip"
+              }
+            },
+            {
+              "name": {
+                "value": "HempCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Theta-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Time"
+              }
+            },
+            {
+              "name": {
+                "value": "Blocktix"
+              }
+            },
+            {
+              "name": {
+                "value": "TokenCard"
+              }
+            },
+            {
+              "name": {
+                "value": "Trackr"
+              }
+            },
+            {
+              "name": {
+                "value": "Tokes"
+              }
+            },
+            {
+              "name": {
+                "value": "Time-New-Bank"
+              }
+            },
+            {
+              "name": {
+                "value": "Tierion"
+              }
+            },
+            {
+              "name": {
+                "value": "ToaCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "OriginTrail"
+              }
+            },
+            {
+              "name": {
+                "value": "Terracoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Tracto"
+              }
+            },
+            {
+              "name": {
+                "value": "Tribe"
+              }
+            },
+            {
+              "name": {
+                "value": "Triggers"
+              }
+            },
+            {
+              "name": {
+                "value": "Trustcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "TrueChain"
+              }
+            },
+            {
+              "name": {
+                "value": "TrustPlus"
+              }
+            },
+            {
+              "name": {
+                "value": "Tronix"
+              }
+            },
+            {
+              "name": {
+                "value": "TrueUSD"
+              }
+            },
+            {
+              "name": {
+                "value": "TransferCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Ubiq"
+              }
+            },
+            {
+              "name": {
+                "value": "UnikoinGold"
+              }
+            },
+            {
+              "name": {
+                "value": "Ulatech"
+              }
+            },
+            {
+              "name": {
+                "value": "UnbreakableCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Uniswap"
+              }
+            },
+            {
+              "name": {
+                "value": "SuperNET"
+              }
+            },
+            {
+              "name": {
+                "value": "Unobtanium"
+              }
+            },
+            {
+              "name": {
+                "value": "Unity-Ingot"
+              }
+            },
+            {
+              "name": {
+                "value": "UpToken"
+              }
+            },
+            {
+              "name": {
+                "value": "Uro"
+              }
+            },
+            {
+              "name": {
+                "value": "Tether"
+              }
+            },
+            {
+              "name": {
+                "value": "TerraUSD"
+              }
+            },
+            {
+              "name": {
+                "value": "UTrust"
+              }
+            },
+            {
+              "name": {
+                "value": "BLOCKv"
+              }
+            },
+            {
+              "name": {
+                "value": "VeChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Veritaseum"
+              }
+            },
+            {
+              "name": {
+                "value": "VeChain"
+              }
+            },
+            {
+              "name": {
+                "value": "Viacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Viberate"
+              }
+            },
+            {
+              "name": {
+                "value": "Vibe"
+              }
+            },
+            {
+              "name": {
+                "value": "VIVO"
+              }
+            },
+            {
+              "name": {
+                "value": "Voise"
+              }
+            },
+            {
+              "name": {
+                "value": "Voxels"
+              }
+            },
+            {
+              "name": {
+                "value": "VPNCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Vericoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Verium"
+              }
+            },
+            {
+              "name": {
+                "value": "Veros"
+              }
+            },
+            {
+              "name": {
+                "value": "vSlice"
+              }
+            },
+            {
+              "name": {
+                "value": "Vertcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "vTorrent"
+              }
+            },
+            {
+              "name": {
+                "value": "WaBi"
+              }
+            },
+            {
+              "name": {
+                "value": "Wanchain"
+              }
+            },
+            {
+              "name": {
+                "value": "Waves"
+              }
+            },
+            {
+              "name": {
+                "value": "Wax-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Wrapped Bitcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Waves-Community"
+              }
+            },
+            {
+              "name": {
+                "value": "WorldCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "WavesGo"
+              }
+            },
+            {
+              "name": {
+                "value": "Wagerr"
+              }
+            },
+            {
+              "name": {
+                "value": "Wings"
+              }
+            },
+            {
+              "name": {
+                "value": "WePower"
+              }
+            },
+            {
+              "name": {
+                "value": "Walton"
+              }
+            },
+            {
+              "name": {
+                "value": "Giga-Watt-Token"
+              }
+            },
+            {
+              "name": {
+                "value": "Asch"
+              }
+            },
+            {
+              "name": {
+                "value": "Xaurum"
+              }
+            },
+            {
+              "name": {
+                "value": "Bitcoin-Plus"
+              }
+            },
+            {
+              "name": {
+                "value": "XtraBYtes"
+              }
+            },
+            {
+              "name": {
+                "value": "Cryptonite"
+              }
+            },
+            {
+              "name": {
+                "value": "Counterparty"
+              }
+            },
+            {
+              "name": {
+                "value": "DigitalNote"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic"
+              }
+            },
+            {
+              "name": {
+                "value": "NEM"
+              }
+            },
+            {
+              "name": {
+                "value": "NEM"
+              }
+            },
+            {
+              "name": {
+                "value": "Haven-Protocol"
+              }
+            },
+            {
+              "name": {
+                "value": "Sphere-Identity"
+              }
+            },
+            {
+              "name": {
+                "value": "Stellar"
+              }
+            },
+            {
+              "name": {
+                "value": "Magi"
+              }
+            },
+            {
+              "name": {
+                "value": "Monero"
+              }
+            },
+            {
+              "name": {
+                "value": "Metal"
+              }
+            },
+            {
+              "name": {
+                "value": "Myriadcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Primecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Rialto"
+              }
+            },
+            {
+              "name": {
+                "value": "Ripple"
+              }
+            },
+            {
+              "name": {
+                "value": "Spectrecoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Stealthcoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Tezos"
+              }
+            },
+            {
+              "name": {
+                "value": "Exchange-Union"
+              }
+            },
+            {
+              "name": {
+                "value": "Vcash"
+              }
+            },
+            {
+              "name": {
+                "value": "Verge"
+              }
+            },
+            {
+              "name": {
+                "value": "WhiteCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "ZCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "ZrCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Yee"
+              }
+            },
+            {
+              "name": {
+                "value": "YOYOW"
+              }
+            },
+            {
+              "name": {
+                "value": "ZcCoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Zclassic"
+              }
+            },
+            {
+              "name": {
+                "value": "Zebi"
+              }
+            },
+            {
+              "name": {
+                "value": "Zcash"
+              }
+            },
+            {
+              "name": {
+                "value": "ZenCash"
+              }
+            },
+            {
+              "name": {
+                "value": "Zetacoin"
+              }
+            },
+            {
+              "name": {
+                "value": "Zilliqa"
+              }
+            },
+            {
+              "name": {
+                "value": "Zilla"
+              }
+            },
+            {
+              "name": {
+                "value": "0x"
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

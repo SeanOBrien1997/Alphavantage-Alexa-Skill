@@ -14,20 +14,31 @@ import {
 import { Response, SessionEndedRequest } from 'ask-sdk-model';
 import { AlphavantageClient } from './alphavantage/AlphavantageClient';
 import {
-  alphavantageBaseURL,
+  ALPHAVANTAGE_BASE_URL,
   ALPHAVANTAGE_API_KEY,
   ALPHAVANTAGE_DIGITAL_CURRENCY_LIST_ENDPOINT,
+  ALPHAVANTAGE_PHYSICAL_CURRENCY_LIST_ENDPOINT,
   amountSlotName,
+  fromCurrencySlotName,
   symbolSlotName,
+  toCurrencySlotName,
 } from './constants';
 import { FilteredIPOsResponse } from './model/alphavantage/api/FilteredIPOsResponse';
-import { DigitalCurrencyListProvider } from './model/DigitalCurrencyListProvider';
+import { CurrencyListProvider } from './model/CurrencyListProvider';
 import { StockClient } from './model/StockClient';
-import { AlphavantageDigitalCurrencyListProvider } from './utils/alphavantage/AlphavantageDigitalCurrencyListProvider';
+import { AlphavantageCurrencyListProvider } from './alphavantage/AlphavantageCurrencyListProvider';
 
 const stockClient: StockClient = new AlphavantageClient(
   ALPHAVANTAGE_API_KEY,
-  alphavantageBaseURL
+  ALPHAVANTAGE_BASE_URL,
+  new AlphavantageCurrencyListProvider(
+    ALPHAVANTAGE_PHYSICAL_CURRENCY_LIST_ENDPOINT,
+    'Could not retrieve physical currency list'
+  ),
+  new AlphavantageCurrencyListProvider(
+    ALPHAVANTAGE_DIGITAL_CURRENCY_LIST_ENDPOINT,
+    'Could not retrieve digital currency list'
+  )
 );
 
 const LaunchRequestHandler: RequestHandler = {
@@ -99,9 +110,10 @@ const ListNDigitalCurrenciesIntentHandler: RequestHandler = {
   async handle(handlerInput: HandlerInput) {
     const requestEnvelope = handlerInput.requestEnvelope;
     const amountSlot = Number(getSlotValue(requestEnvelope, amountSlotName));
-    const digitalCurrencyListProvider: DigitalCurrencyListProvider =
-      new AlphavantageDigitalCurrencyListProvider(
-        ALPHAVANTAGE_DIGITAL_CURRENCY_LIST_ENDPOINT
+    const digitalCurrencyListProvider: CurrencyListProvider =
+      new AlphavantageCurrencyListProvider(
+        ALPHAVANTAGE_DIGITAL_CURRENCY_LIST_ENDPOINT,
+        'Unable to retrieve digital currencies'
       );
     const digitalCurrenciesMap =
       await digitalCurrencyListProvider.getCurrenciesNamePrimaryKey();
@@ -124,6 +136,52 @@ const ListNDigitalCurrenciesIntentHandler: RequestHandler = {
     const speakOutput: string = `Here are ${
       filteredRandomlySelectedCurrencies.size
     } random digital currencies. ${details.join('. ')}`;
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const ListNPhysicalCurrenciesIntentHandler: RequestHandler = {
+  canHandle(handlerInput: HandlerInput) {
+    return (
+      getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+      getIntentName(handlerInput.requestEnvelope) ===
+        'ListNPhysicalCurrenciesIntent'
+    );
+  },
+  async handle(handlerInput: HandlerInput) {
+    const requestEnvelope = handlerInput.requestEnvelope;
+    const amountSlot = Number(getSlotValue(requestEnvelope, amountSlotName));
+    const digitalCurrencyListProvider: CurrencyListProvider =
+      new AlphavantageCurrencyListProvider(
+        ALPHAVANTAGE_PHYSICAL_CURRENCY_LIST_ENDPOINT,
+        'Unable to retrieve physical currencies'
+      );
+    const physicalCurrenciesMap =
+      await digitalCurrencyListProvider.getCurrenciesNamePrimaryKey();
+    const keys = Array.from(physicalCurrenciesMap.keys());
+    const filteredRandomlySelectedCurrencies = new Map<string, string>();
+    for (let i = 0; i < amountSlot; i++) {
+      const randomIndex = Math.floor(Math.random() * (keys.length + 1));
+      const key = keys[randomIndex];
+      const value = physicalCurrenciesMap.get(key);
+      if (value) {
+        filteredRandomlySelectedCurrencies.set(key, value);
+      }
+    }
+    const details: string[] = [];
+    let count = 1;
+    filteredRandomlySelectedCurrencies.forEach((value, key) => {
+      details.push(`Number ${count}. ${key} trading as ${value}`);
+      count++;
+    });
+    const speakOutput: string = `Here are ${
+      filteredRandomlySelectedCurrencies.size
+    } random physical currencies. ${details.join('. ')}`;
     return (
       handlerInput.responseBuilder
         .speak(speakOutput)
@@ -162,6 +220,63 @@ const NextNIPOsIntentHandler: RequestHandler = {
     } IPOs expected in the next three months. You requested ${amountSlot}. ${details.join(
       '.'
     )}`;
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const ConvertCurrenciesIntentHandler: RequestHandler = {
+  canHandle(handlerInput: HandlerInput) {
+    return (
+      getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' &&
+      getIntentName(handlerInput.requestEnvelope) === 'ConvertCurrenciesIntent'
+    );
+  },
+  async handle(handlerInput: HandlerInput) {
+    const requestEnvelope = handlerInput.requestEnvelope;
+    let speakOutput = 'Hello World from conversion handler!';
+    console.log(requestEnvelope);
+
+    const fromCurrencySlot: string = getSlotValue(
+      requestEnvelope,
+      fromCurrencySlotName
+    );
+    const toCurrencySlot: string = getSlotValue(
+      requestEnvelope,
+      toCurrencySlotName
+    );
+
+    console.log(`Converting ${fromCurrencySlot} to ${toCurrencySlot}`);
+
+    const isFromCurrency = await stockClient.verifyIsCurrency(fromCurrencySlot);
+    const isToCurrency = await stockClient.verifyIsCurrency(toCurrencySlot);
+    console.log(
+      `Valid from ${isFromCurrency.isCurrency} valid to ${isToCurrency.isCurrency}`
+    );
+    if (isFromCurrency.isCurrency && isToCurrency.isCurrency) {
+      const exchangeRate = await stockClient.convertCurrencies(
+        isFromCurrency.currencyCode,
+        isToCurrency.currencyCode
+      );
+      console.log(exchangeRate);
+      speakOutput = `The current exchange rate for ${exchangeRate.fromName} to ${exchangeRate.toName} is ${exchangeRate.rate}. The current ask price is ${exchangeRate.askPrice} and the current bid price is ${exchangeRate.bidPrice}. This information was last updated on ${exchangeRate.lastRefreshed} ${exchangeRate.timeZone}`;
+    } else {
+      const invalidCurrencies: string[] = [];
+      if (!isFromCurrency.isCurrency) {
+        invalidCurrencies.push(fromCurrencySlot);
+      }
+      if (!isToCurrency.isCurrency) {
+        invalidCurrencies.push(toCurrencySlot);
+      }
+      speakOutput = `The following requested currencies could not be used ${invalidCurrencies.join(
+        ' and '
+      )}`;
+    }
+
     return (
       handlerInput.responseBuilder
         .speak(speakOutput)
@@ -268,6 +383,8 @@ exports.handler = SkillBuilders.custom()
     SpecificGlobalStockSymbolQuoteIntentHandler,
     NextNIPOsIntentHandler,
     ListNDigitalCurrenciesIntentHandler,
+    ListNPhysicalCurrenciesIntentHandler,
+    ConvertCurrenciesIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,

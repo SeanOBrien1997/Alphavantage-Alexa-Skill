@@ -1,16 +1,16 @@
 import axios from 'axios';
-import { DigitalCurrencyListProvider } from '../../model/DigitalCurrencyListProvider';
+import { CurrencyListProvider } from '../model/CurrencyListProvider';
 
-export class AlphavantageDigitalCurrencyListProvider
-  implements DigitalCurrencyListProvider
-{
+export class AlphavantageCurrencyListProvider implements CurrencyListProvider {
   private dataAvailable: boolean;
   private ENDPOINT: string;
   private csv: string;
   private localNameCurrencyMap: Map<string, string>;
+  private rejectMessage: string;
 
-  constructor(endpoint: string) {
+  constructor(endpoint: string, rejectMessage: string) {
     this.ENDPOINT = endpoint;
+    this.rejectMessage = rejectMessage;
     this.dataAvailable = false;
   }
 
@@ -25,11 +25,14 @@ export class AlphavantageDigitalCurrencyListProvider
         if (this.isDataAvailable()) {
           resolve(this.localNameCurrencyMap);
         } else {
-          reject(`Unable to retrieve digital currencies from ${this.ENDPOINT}`);
+          reject(`${this.rejectMessage} from ${this.ENDPOINT}`);
         }
+      } else {
+        resolve(this.localNameCurrencyMap);
       }
     });
   }
+
   async getCurrenciesCurrencyCodePrimaryKey(): Promise<Map<string, string>> {
     return new Promise<Map<string, string>>(async (resolve, reject) => {
       if (!this.isDataAvailable()) {
@@ -41,8 +44,14 @@ export class AlphavantageDigitalCurrencyListProvider
           });
           resolve(result);
         } else {
-          reject(`Unable to retrieve digital currencies from ${this.ENDPOINT}`);
+          reject(`${this.rejectMessage} from ${this.ENDPOINT}`);
         }
+      } else {
+        const result = new Map<string, string>();
+        this.localNameCurrencyMap.forEach((value, key) => {
+          result.set(value, key);
+        });
+        resolve(result);
       }
     });
   }
@@ -71,8 +80,8 @@ export class AlphavantageDigitalCurrencyListProvider
             digitalCurrencyCodeNamePair[1].length > 0
           ) {
             localNameCurrencyMap.set(
-              digitalCurrencyCodeNamePair[1],
-              digitalCurrencyCodeNamePair[0]
+              digitalCurrencyCodeNamePair[1].toUpperCase().trim(),
+              digitalCurrencyCodeNamePair[0].toUpperCase().trim()
             );
           }
         }

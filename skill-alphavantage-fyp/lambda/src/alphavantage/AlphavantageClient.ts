@@ -2,16 +2,60 @@ import { GlobalQuote } from '../model/GlobalQuote';
 import { StockClient } from '../model/StockClient';
 import { IPO } from '../model/IPO';
 import { GlobalQuoteResponse } from '../model/alphavantage/api/GlobalQuoteResponse';
-import axios from 'axios';
 import { FilteredIPOsResponse } from '../model/alphavantage/api/FilteredIPOsResponse';
+import { CurrencyListProvider } from '../model/CurrencyListProvider';
+import { CurrencyVerificationResponse } from '../model/CurrencyVerificationResponse';
+import axios from 'axios';
+import { ExchangeRate } from '../model/ExchangeRate';
+import { RealtimeCurrencyExchangeRateResponse } from '../model/alphavantage/api/RealtimeCurrencyExchangeRateResponse';
 
 export class AlphavantageClient implements StockClient {
   private API_KEY: string;
   private BASE_URL: string;
+  private physicalCurrencyListProvider: CurrencyListProvider;
+  private digitalCurrencyListProvider: CurrencyListProvider;
 
-  constructor(API_KEY: string, BASE_URL: string) {
+  constructor(
+    API_KEY: string,
+    BASE_URL: string,
+    physicalCurrencyListProvider: CurrencyListProvider,
+    digitalCurrencyListProvider: CurrencyListProvider
+  ) {
     this.API_KEY = API_KEY;
     this.BASE_URL = BASE_URL;
+    this.physicalCurrencyListProvider = physicalCurrencyListProvider;
+    this.digitalCurrencyListProvider = digitalCurrencyListProvider;
+  }
+  convertCurrencies(fromCode: string, toCode: string): Promise<ExchangeRate> {
+    return new Promise<ExchangeRate>(async (resolve, reject) => {
+      const ENDPOINT = `${this.BASE_URL}function=CURRENCY_EXCHANGE_RATE&from_currency=${fromCode}&to_currency=${toCode}&apikey=${this.API_KEY}`;
+      const response = await axios.get(ENDPOINT);
+      if (response.status === 200) {
+        const data: RealtimeCurrencyExchangeRateResponse = response.data;
+        console.log('Logging exchange rate data');
+        console.log(data);
+        resolve({
+          fromCode:
+            data['Realtime Currency Exchange Rate']['1. From_Currency Code'],
+          fromName:
+            data['Realtime Currency Exchange Rate']['2. From_Currency Name'],
+          toCode:
+            data['Realtime Currency Exchange Rate']['3. To_Currency Code'],
+          toName:
+            data['Realtime Currency Exchange Rate']['4. To_Currency Name'],
+          rate: data['Realtime Currency Exchange Rate']['5. Exchange Rate'],
+          lastRefreshed:
+            data['Realtime Currency Exchange Rate']['6. Last Refreshed'],
+          timeZone: data['Realtime Currency Exchange Rate']['7. Time Zone'],
+          bidPrice: data['Realtime Currency Exchange Rate']['8. Bid Price'],
+          askPrice: data['Realtime Currency Exchange Rate']['9. Ask Price'],
+        });
+      } else {
+        reject(
+          `Invalid response received by Alphavantage API ${response.status}, reason: ${response.statusText}`
+        );
+      }
+    });
   }
   async getNextNInitialPublicOfferings(
     amount: number
@@ -83,6 +127,59 @@ export class AlphavantageClient implements StockClient {
         );
       }
     });
+  }
+
+  async verifyIsCurrency(data: string): Promise<CurrencyVerificationResponse> {
+    return new Promise<CurrencyVerificationResponse>(
+      async (resolve, _reject) => {
+        console.log('Fetching currency lists');
+        const physicalCurrencyListByName =
+          await this.physicalCurrencyListProvider.getCurrenciesNamePrimaryKey();
+        console.log(physicalCurrencyListByName);
+        const physicalCurrencyListByCode =
+          await this.physicalCurrencyListProvider.getCurrenciesCurrencyCodePrimaryKey();
+        console.log(physicalCurrencyListByCode);
+        const digitalCurrencyListByName =
+          await this.digitalCurrencyListProvider.getCurrenciesNamePrimaryKey();
+        console.log(digitalCurrencyListByName);
+        const digitalCurrencyListByCode =
+          await this.digitalCurrencyListProvider.getCurrenciesCurrencyCodePrimaryKey();
+        console.log(digitalCurrencyListByCode);
+        console.log('Fetched');
+        console.log(`Searching for ${data.toUpperCase()}`);
+        const search: string = data.toUpperCase();
+        if (
+          physicalCurrencyListByCode.has(search) ||
+          digitalCurrencyListByCode.has(search)
+        ) {
+          resolve({
+            isCurrency: true,
+            currencyCode: search,
+          });
+        } else if (physicalCurrencyListByName.has(search)) {
+          const result = physicalCurrencyListByName.get(search);
+          if (result) {
+            resolve({
+              isCurrency: true,
+              currencyCode: result,
+            });
+          }
+        } else if (digitalCurrencyListByName.has(search)) {
+          const result = digitalCurrencyListByName.get(search);
+          if (result) {
+            resolve({
+              isCurrency: true,
+              currencyCode: result,
+            });
+          }
+        } else {
+          resolve({
+            isCurrency: false,
+            currencyCode: '',
+          });
+        }
+      }
+    );
   }
 
   private parseIPOCSVResponse = (csv: string): IPO[] => {
