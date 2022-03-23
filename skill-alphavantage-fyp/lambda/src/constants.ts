@@ -1,3 +1,4 @@
+// The following are a list of global constants. This is intended to be used across multiple files to reduce memory consumption.
 export const symbolSlotName = 'symbol';
 export const amountSlotName = 'amount';
 export const toCurrencySlotName = 'toCurrency';

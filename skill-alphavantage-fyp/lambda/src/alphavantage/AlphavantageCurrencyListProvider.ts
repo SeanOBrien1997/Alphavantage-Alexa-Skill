@@ -14,10 +14,18 @@ export class AlphavantageCurrencyListProvider implements CurrencyListProvider {
     this.dataAvailable = false;
   }
 
+  /**
+   * Indicates if list data is available
+   * @returns A boolean that is true if the list data is available, false otherwise.
+   */
   isDataAvailable(): boolean {
     return this.dataAvailable;
   }
 
+  /**
+   * Retreives a list of the supported currencies where the key is the name of the currency i.e Euro and the value is the symbol i.e EUR
+   * @returns A promise that resolves to the map containing the currencies and rejects if the data could not be retrieved
+   */
   async getCurrenciesNamePrimaryKey(): Promise<Map<string, string>> {
     return new Promise<Map<string, string>>(async (resolve, reject) => {
       if (!this.isDataAvailable()) {
@@ -33,6 +41,10 @@ export class AlphavantageCurrencyListProvider implements CurrencyListProvider {
     });
   }
 
+  /**
+   * Retreives a list of the supported currencies where the key is the name of the currency i.e Euro and the value is the symbol i.e EUR.
+   * @returns A promise that resolves to the map containing the currencies and rejects if the data could not be retrieved
+   */
   async getCurrenciesCurrencyCodePrimaryKey(): Promise<Map<string, string>> {
     return new Promise<Map<string, string>>(async (resolve, reject) => {
       if (!this.isDataAvailable()) {
@@ -56,11 +68,17 @@ export class AlphavantageCurrencyListProvider implements CurrencyListProvider {
     });
   }
 
+  /**
+   * Calls the Alphavantage API to retrieve CSV containing currency information and formats that CSV data into a map.
+   */
   private async fetchAndFormatData() {
     await this.fetchCSV();
     this.formatCSV();
   }
 
+  /**
+   * Utility function that formats the cached CSV data if it is available.
+   */
   private formatCSV() {
     let localNameCurrencyMap: Map<string, string> = new Map();
     if (!this.isDataAvailable()) {
@@ -90,6 +108,9 @@ export class AlphavantageCurrencyListProvider implements CurrencyListProvider {
     this.localNameCurrencyMap = localNameCurrencyMap;
   }
 
+  /**
+   * Retrieves the CSV data from the Alphavantage endpoint and caches it. Updates the data availability flag.
+   */
   private async fetchCSV() {
     const response = await axios.get(this.ENDPOINT, { responseType: 'blob' });
     if (response.status === 200) {

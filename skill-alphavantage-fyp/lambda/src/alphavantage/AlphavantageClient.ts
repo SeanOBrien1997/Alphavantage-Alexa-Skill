@@ -10,10 +10,10 @@ import { ExchangeRate } from '../model/ExchangeRate';
 import { RealtimeCurrencyExchangeRateResponse } from '../model/alphavantage/api/RealtimeCurrencyExchangeRateResponse';
 
 export class AlphavantageClient implements StockClient {
-  private API_KEY: string;
-  private BASE_URL: string;
-  private physicalCurrencyListProvider: CurrencyListProvider;
-  private digitalCurrencyListProvider: CurrencyListProvider;
+  private API_KEY: string; // The API key to be used with Alphavantage API
+  private BASE_URL: string; // The base URL to use when calling the API
+  private physicalCurrencyListProvider: CurrencyListProvider; // The provider of the list of supported physical currencies
+  private digitalCurrencyListProvider: CurrencyListProvider; // The provider of the list of supported digital currencies
 
   constructor(
     API_KEY: string,
@@ -26,6 +26,13 @@ export class AlphavantageClient implements StockClient {
     this.physicalCurrencyListProvider = physicalCurrencyListProvider;
     this.digitalCurrencyListProvider = digitalCurrencyListProvider;
   }
+  /**
+   * Uses the Alphavantage API to convert two currencies.
+   * Currently the API supports conversion between all currency types (Both physical and digital).
+   * @param fromCode The code representing the starting currency.
+   * @param toCode The code representing the target currency.
+   * @returns A promise that resolves with the exchange rate data and rejects if the data cannot be retrieved.
+   */
   convertCurrencies(fromCode: string, toCode: string): Promise<ExchangeRate> {
     return new Promise<ExchangeRate>(async (resolve, reject) => {
       const ENDPOINT = `${this.BASE_URL}function=CURRENCY_EXCHANGE_RATE&from_currency=${fromCode}&to_currency=${toCode}&apikey=${this.API_KEY}`;
@@ -57,6 +64,12 @@ export class AlphavantageClient implements StockClient {
       }
     });
   }
+
+  /**
+   * Uses Alphavantage API to retrieve the upcoming IPOs and filters for the desired amount.
+   * @param amount The amount of IPOs to attempt to retrieve.
+   * @returns A promise that resolves to information regarding the IPOs retrieved and rejects if the IPOs could not be retrieved from the API.
+   */
   async getNextNInitialPublicOfferings(
     amount: number
   ): Promise<FilteredIPOsResponse> {
@@ -100,6 +113,11 @@ export class AlphavantageClient implements StockClient {
     });
   }
 
+  /**
+   * Uses Alphavantage API to retrieve information regarding a stock.
+   * @param symbol The symbol/ticker for the stock.
+   * @returns A promise that resolves with information regarding the stock and rejects if the stock information could not be retrieved from the API.
+   */
   async getGlobalQuoteForSymbol(symbol: string): Promise<GlobalQuote> {
     return new Promise<GlobalQuote>(async (resolve, reject) => {
       const ENDPOINT = `${this.BASE_URL}function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${this.API_KEY}`;
@@ -129,6 +147,11 @@ export class AlphavantageClient implements StockClient {
     });
   }
 
+  /**
+   * Verifies if a given symbol or stock name is supported.
+   * @param data The symbol or stock name to check.
+   * @returns A promise that resolves with information containing the validity of the given stock name/symbol.
+   */
   async verifyIsCurrency(data: string): Promise<CurrencyVerificationResponse> {
     return new Promise<CurrencyVerificationResponse>(
       async (resolve, _reject) => {
@@ -182,6 +205,11 @@ export class AlphavantageClient implements StockClient {
     );
   }
 
+  /**
+   * Parses IPOs csv
+   * @param csv The IPO csv to parse
+   * @returns An array of IPOs
+   */
   private parseIPOCSVResponse = (csv: string): IPO[] => {
     const result: IPO[] = [];
     const lines: string[] = csv.split('\n');
@@ -208,9 +236,9 @@ export class AlphavantageClient implements StockClient {
   };
 
   /**
-   *
-   * @param globalQuoteResponse
-   * @returns
+   * Parses the API response to retrieve relevant stock information.
+   * @param globalQuoteResponse The API response to parse.
+   * @returns The GlobalQuote containing the stock information.
    */
   private parseGlobalQuoteResponseForGlobalQuote = (
     globalQuoteResponse: GlobalQuoteResponse
