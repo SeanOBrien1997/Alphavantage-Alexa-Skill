@@ -21,7 +21,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:eu-west-1:340812117322:function:ask-skill-alphavantage-fyp-default-default-1647993643572"
+          "uri": "arn:aws:lambda:eu-west-1:340812117322:function:ask-skill-alphavantage-fyp-default-default-1648005981914"
         }
       }
     },
