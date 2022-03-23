@@ -7,22 +7,22 @@
           "deployState": {
             "default": {
               "lambda": {
-                "arn": "arn:aws:lambda:eu-west-1:340812117322:function:ask-skill-alphavantage-fyp-default-default-1647991060071",
-                "lastModified": "2022-03-22T23:17:42.770+0000",
-                "revisionId": "14c7bf1e-ae18-40cc-84a2-d871cdd13e69"
+                "arn": "arn:aws:lambda:eu-west-1:340812117322:function:ask-skill-alphavantage-fyp-default-default-1647993643572",
+                "lastModified": "2022-03-23T00:00:46.186+0000",
+                "revisionId": "46691a8d-b899-4e56-856c-868f07f64eda"
               },
-              "iamRole": "arn:aws:iam::340812117322:role/ask-lambda-skill-alphavantage-fyp-1647991051301"
+              "iamRole": "arn:aws:iam::340812117322:role/ask-lambda-skill-alphavantage-fyp-1647993634638"
             }
           }
         }
       },
       "skillId": "amzn1.ask.skill.296af463-dc25-44db-8f1e-325bc3de8aec",
       "skillMetadata": {
-        "lastDeployHash": "Pr4zL2q9RipFK/X6fLz7xkZ+FLw="
+        "lastDeployHash": "LU5JgfxiL+QZfWfKmu1TGmRGfY0="
       },
       "code": {
         "default": {
-          "lastDeployHash": "gSWiwI3DUPBVZzUKwJ4DB3MbaP4="
+          "lastDeployHash": "PX8C7LpLrWkSpGkmz7BA7z/Fcno="
         }
       }
     }
